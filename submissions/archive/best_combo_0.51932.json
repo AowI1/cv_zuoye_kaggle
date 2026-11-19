@@ -1,0 +1,24 @@
+{
+  "name": "combo_best10",
+  "kaggle_private": 0.51932,
+  "kaggle_public": 0.43339,
+  "note": "per-species winners from the leaderboard sweep; see docs/SWEEP.md",
+  "backbones": ["miewid", "mega"],
+  "species": {
+    "LynxID2025": {
+      "override": {"threshold": 0.22}
+    },
+    "SalamanderID2025": {
+      "override": {"weights": {"miewid": 0.5, "mega": 0.5, "local": 1.5}},
+      "target_mean_cluster_size": 2.0
+    },
+    "SeaTurtleID2022": {
+      "override": {"date_boost": 0.70},
+      "target_mean_cluster_size": 2.3
+    },
+    "TexasHornedLizards": {
+      "override": {},
+      "target_mean_cluster_size": 1.2
+    }
+  }
+}

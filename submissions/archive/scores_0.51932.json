@@ -1,0 +1,873 @@
+{
+  "base_densitymatched.csv": {
+    "name": "base",
+    "private": 0.37244,
+    "public": 0.35805,
+    "status": "complete"
+  },
+  "combo_best1.csv": {
+    "clusters": {
+      "LynxID2025": 452,
+      "SalamanderID2025": 457,
+      "SeaTurtleID2022": 200,
+      "TexasHornedLizards": 211
+    },
+    "date": "2026-11-19 15:56:31.827000",
+    "name": "combo_best1",
+    "private": 0.40635,
+    "public": 0.39641,
+    "species": "combo",
+    "status": "complete"
+  },
+  "combo_best10.csv": {
+    "clusters": {
+      "LynxID2025": 129,
+      "SalamanderID2025": 344,
+      "SeaTurtleID2022": 157,
+      "TexasHornedLizards": 227
+    },
+    "date": "2026-11-19 17:03:07.037000",
+    "name": "combo_best10",
+    "private": 0.51932,
+    "public": 0.43339,
+    "species": "combo",
+    "status": "complete"
+  },
+  "combo_best2.csv": {
+    "clusters": {
+      "LynxID2025": 452,
+      "SalamanderID2025": 457,
+      "SeaTurtleID2022": 200,
+      "TexasHornedLizards": 211
+    },
+    "date": "2026-11-19 15:57:23.160000",
+    "name": "combo_best2",
+    "private": 0.40635,
+    "public": 0.39485,
+    "species": "combo",
+    "status": "complete"
+  },
+  "combo_best3.csv": {
+    "clusters": {
+      "LynxID2025": 392,
+      "SalamanderID2025": 457,
+      "SeaTurtleID2022": 200,
+      "TexasHornedLizards": 227
+    },
+    "date": "2026-11-19 16:00:51.827000",
+    "name": "combo_best3",
+    "private": 0.41745,
+    "public": 0.38689,
+    "species": "combo",
+    "status": "complete"
+  },
+  "combo_best4.csv": {
+    "clusters": {
+      "LynxID2025": 392,
+      "SalamanderID2025": 343,
+      "SeaTurtleID2022": 200,
+      "TexasHornedLizards": 227
+    },
+    "date": "2026-11-19 16:01:44.763000",
+    "name": "combo_best4",
+    "private": 0.42774,
+    "public": 0.37748,
+    "species": "combo",
+    "status": "complete"
+  },
+  "combo_best5.csv": {
+    "clusters": {
+      "LynxID2025": 290,
+      "SalamanderID2025": 343,
+      "SeaTurtleID2022": 200,
+      "TexasHornedLizards": 227
+    },
+    "date": "2026-11-19 16:05:35.317000",
+    "name": "combo_best5",
+    "private": 0.4422,
+    "public": 0.38161,
+    "species": "combo",
+    "status": "complete"
+  },
+  "combo_best6.csv": {
+    "clusters": {
+      "LynxID2025": 173,
+      "SalamanderID2025": 343,
+      "SeaTurtleID2022": 216,
+      "TexasHornedLizards": 227
+    },
+    "date": "2026-11-19 16:10:06.993000",
+    "name": "combo_best6",
+    "private": 0.45592,
+    "public": 0.38799,
+    "species": "combo",
+    "status": "complete"
+  },
+  "combo_best7.csv": {
+    "clusters": {
+      "LynxID2025": 129,
+      "SalamanderID2025": 343,
+      "SeaTurtleID2022": 216,
+      "TexasHornedLizards": 227
+    },
+    "date": "2026-11-19 16:11:55.063000",
+    "name": "combo_best7",
+    "private": 0.46328,
+    "public": 0.37626,
+    "species": "combo",
+    "status": "complete"
+  },
+  "combo_best8.csv": {
+    "clusters": {
+      "LynxID2025": 129,
+      "SalamanderID2025": 344,
+      "SeaTurtleID2022": 216,
+      "TexasHornedLizards": 227
+    },
+    "date": "2026-11-19 16:23:09.010000",
+    "name": "combo_best8",
+    "private": 0.46554,
+    "public": 0.37947,
+    "species": "combo",
+    "status": "complete"
+  },
+  "combo_best9.csv": {
+    "clusters": {
+      "LynxID2025": 129,
+      "SalamanderID2025": 344,
+      "SeaTurtleID2022": 216,
+      "TexasHornedLizards": 227
+    },
+    "date": "2026-11-19 16:52:28.467000",
+    "name": "combo_best9",
+    "private": 0.47292,
+    "public": 0.39725,
+    "species": "combo",
+    "status": "complete"
+  },
+  "combo_turtle2.3_lynx0.66.csv": {
+    "clusters": {
+      "LynxID2025": 513,
+      "SalamanderID2025": 457,
+      "SeaTurtleID2022": 216,
+      "TexasHornedLizards": 179
+    },
+    "date": "2026-11-19 15:46:53.770000",
+    "name": "combo_turtle2.3_lynx0.66",
+    "private": 0.3856,
+    "public": 0.36926,
+    "species": "combo",
+    "status": "complete"
+  },
+  "lizard_local3.0.csv": {
+    "clusters": 182,
+    "date": "2026-11-19 15:45:46.700000",
+    "name": "lizard_local3.0",
+    "private": 0.37993,
+    "public": 0.3732,
+    "species": "TexasHornedLizards",
+    "status": "complete"
+  },
+  "lizard_local3.0_mean1.3.csv": {
+    "clusters": 211,
+    "date": "2026-11-19 15:49:56.877000",
+    "name": "lizard_local3.0_mean1.3",
+    "private": 0.39227,
+    "public": 0.37657,
+    "species": "TexasHornedLizards",
+    "status": "complete"
+  },
+  "lizard_local4.0_mean1.3.csv": {
+    "clusters": 210,
+    "date": "2026-11-19 15:50:48.020000",
+    "name": "lizard_local4.0_mean1.3",
+    "private": 0.39227,
+    "public": 0.37657,
+    "species": "TexasHornedLizards",
+    "status": "complete"
+  },
+  "lizard_mean1.1.csv": {
+    "clusters": 249,
+    "date": "2026-11-19 15:49:05.700000",
+    "name": "lizard_mean1.1",
+    "private": 0.35691,
+    "public": 0.35996,
+    "species": "TexasHornedLizards",
+    "status": "complete"
+  },
+  "lizard_mean1.2.csv": {
+    "clusters": 227,
+    "date": "2026-11-19 15:44:56.467000",
+    "name": "lizard_mean1.2",
+    "private": 0.39672,
+    "public": 0.36409,
+    "species": "TexasHornedLizards",
+    "status": "complete"
+  },
+  "lizard_mean1.3.csv": {
+    "clusters": 211,
+    "date": "2026-11-19 15:44:05.797000",
+    "name": "lizard_mean1.3",
+    "private": 0.39227,
+    "public": 0.37812,
+    "species": "TexasHornedLizards",
+    "status": "complete"
+  },
+  "lizard_mean2.0.csv": {
+    "clusters": 137,
+    "date": "2026-11-19 15:24:14.977000",
+    "name": "lizard_mean2.0",
+    "private": 0.33089,
+    "public": 0.35331,
+    "species": "TexasHornedLizards",
+    "status": "SubmissionStatus.COMPLETE"
+  },
+  "lizard_mean2.5.csv": {
+    "clusters": 110,
+    "date": "2026-11-19 15:26:29.337000",
+    "name": "lizard_mean2.5",
+    "private": 0.30331,
+    "public": 0.34372,
+    "species": "TexasHornedLizards",
+    "status": "SubmissionStatus.COMPLETE"
+  },
+  "lizard_mean3.0.csv": {
+    "clusters": 90,
+    "date": "2026-11-19 15:27:19.660000",
+    "name": "lizard_mean3.0",
+    "private": 0.29313,
+    "public": 0.31578,
+    "species": "TexasHornedLizards",
+    "status": "SubmissionStatus.COMPLETE"
+  },
+  "lizard_merge2_mean1.3.csv": {
+    "clusters": 152,
+    "date": "2026-11-19 15:51:39.510000",
+    "name": "lizard_merge2_mean1.3",
+    "private": 0.34796,
+    "public": 0.36264,
+    "species": "TexasHornedLizards",
+    "status": "complete"
+  },
+  "lizard_nolocal.csv": {
+    "clusters": 183,
+    "date": "2026-11-19 15:28:12.770000",
+    "name": "lizard_nolocal",
+    "private": 0.27759,
+    "public": 0.27616,
+    "species": "TexasHornedLizards",
+    "status": "SubmissionStatus.COMPLETE"
+  },
+  "lizard_w3070.csv": {
+    "clusters": 227,
+    "date": "2026-11-19 16:19:23.633000",
+    "name": "lizard_w3070",
+    "private": 0.39119,
+    "public": 0.36257,
+    "species": "TexasHornedLizards",
+    "status": "complete"
+  },
+  "lizard_w7030.csv": {
+    "clusters": 228,
+    "date": "2026-11-19 16:19:57.093000",
+    "name": "lizard_w7030",
+    "private": 0.39119,
+    "public": 0.36409,
+    "species": "TexasHornedLizards",
+    "status": "complete"
+  },
+  "lynx_022_anchor0.4.csv": {
+    "clusters": 123,
+    "date": "2026-11-19 16:13:49.590000",
+    "name": "lynx_022_anchor0.4",
+    "private": 0.42257,
+    "public": 0.38032,
+    "species": "LynxID2025",
+    "status": "complete"
+  },
+  "lynx_022_anchor0.5.csv": {
+    "clusters": 126,
+    "date": "2026-11-19 16:12:58.910000",
+    "name": "lynx_022_anchor0.5",
+    "private": 0.42257,
+    "public": 0.37901,
+    "species": "LynxID2025",
+    "status": "complete"
+  },
+  "lynx_022_local0.05.csv": {
+    "clusters": 143,
+    "date": "2026-11-19 17:08:05.893000",
+    "name": "lynx_022_local0.05",
+    "private": 0.41946,
+    "public": 0.37334,
+    "species": "LynxID2025",
+    "status": "complete"
+  },
+  "lynx_022_merge2.csv": {
+    "clusters": 129,
+    "date": "2026-11-19 16:14:22.673000",
+    "name": "lynx_022_merge2",
+    "private": 0.42261,
+    "public": 0.3704,
+    "species": "LynxID2025",
+    "status": "complete"
+  },
+  "lynx_022_orientcal.csv": {
+    "clusters": 129,
+    "date": "2026-11-19 17:11:17.867000",
+    "name": "lynx_022_orientcal",
+    "private": 0.42261,
+    "public": 0.3704,
+    "species": "LynxID2025",
+    "status": "complete"
+  },
+  "lynx_022_rerank.csv": {
+    "clusters": 159,
+    "date": "2026-11-19 16:15:11.620000",
+    "name": "lynx_022_rerank",
+    "private": 0.39797,
+    "public": 0.36931,
+    "species": "LynxID2025",
+    "status": "complete"
+  },
+  "lynx_022_w5050.csv": {
+    "clusters": 147,
+    "date": "2026-11-19 16:17:41.223000",
+    "name": "lynx_022_w5050",
+    "private": 0.41733,
+    "public": 0.3598,
+    "species": "LynxID2025",
+    "status": "complete"
+  },
+  "lynx_022_w9010.csv": {
+    "clusters": 119,
+    "date": "2026-11-19 16:18:32.783000",
+    "name": "lynx_022_w9010",
+    "private": 0.41879,
+    "public": 0.38837,
+    "species": "LynxID2025",
+    "status": "complete"
+  },
+  "lynx_local0.1.csv": {
+    "clusters": 588,
+    "date": "2026-11-19 15:31:58.790000",
+    "name": "lynx_local0.1",
+    "private": 0.36595,
+    "public": 0.354,
+    "species": "LynxID2025",
+    "status": "SubmissionStatus.COMPLETE"
+  },
+  "lynx_t0.14.csv": {
+    "clusters": 44,
+    "date": "2026-11-19 16:08:43.417000",
+    "name": "lynx_t0.14",
+    "private": 0.4169,
+    "public": 0.36344,
+    "species": "LynxID2025",
+    "status": "complete"
+  },
+  "lynx_t0.18.csv": {
+    "clusters": 83,
+    "date": "2026-11-19 16:07:52.337000",
+    "name": "lynx_t0.18",
+    "private": 0.41104,
+    "public": 0.36963,
+    "species": "LynxID2025",
+    "status": "complete"
+  },
+  "lynx_t0.22.csv": {
+    "clusters": 129,
+    "date": "2026-11-19 16:07:17.680000",
+    "name": "lynx_t0.22",
+    "private": 0.42261,
+    "public": 0.3704,
+    "species": "LynxID2025",
+    "status": "complete"
+  },
+  "lynx_t0.24.csv": {
+    "clusters": 150,
+    "date": "2026-11-19 16:11:21.217000",
+    "name": "lynx_t0.24",
+    "private": 0.42091,
+    "public": 0.38185,
+    "species": "LynxID2025",
+    "status": "complete"
+  },
+  "lynx_t0.26.csv": {
+    "clusters": 173,
+    "date": "2026-11-19 16:04:45.390000",
+    "name": "lynx_t0.26",
+    "private": 0.41525,
+    "public": 0.38213,
+    "species": "LynxID2025",
+    "status": "complete"
+  },
+  "lynx_t0.30.csv": {
+    "clusters": 216,
+    "date": "2026-11-19 16:03:55.023000",
+    "name": "lynx_t0.30",
+    "private": 0.41486,
+    "public": 0.3792,
+    "species": "LynxID2025",
+    "status": "complete"
+  },
+  "lynx_t0.34.csv": {
+    "clusters": 254,
+    "date": "2026-11-19 16:03:20.757000",
+    "name": "lynx_t0.34",
+    "private": 0.41042,
+    "public": 0.37758,
+    "species": "LynxID2025",
+    "status": "complete"
+  },
+  "lynx_t0.38.csv": {
+    "clusters": 290,
+    "date": "2026-11-19 16:00:17.017000",
+    "name": "lynx_t0.38",
+    "private": 0.40342,
+    "public": 0.37179,
+    "species": "LynxID2025",
+    "status": "complete"
+  },
+  "lynx_t0.42.csv": {
+    "clusters": 333,
+    "date": "2026-11-19 15:59:26.680000",
+    "name": "lynx_t0.42",
+    "private": 0.39541,
+    "public": 0.36457,
+    "species": "LynxID2025",
+    "status": "complete"
+  },
+  "lynx_t0.46.csv": {
+    "clusters": 360,
+    "date": "2026-11-19 15:58:35.487000",
+    "name": "lynx_t0.46",
+    "private": 0.39172,
+    "public": 0.36824,
+    "species": "LynxID2025",
+    "status": "complete"
+  },
+  "lynx_t0.50.csv": {
+    "clusters": 392,
+    "date": "2026-11-19 15:53:05.997000",
+    "name": "lynx_t0.50",
+    "private": 0.38896,
+    "public": 0.36766,
+    "species": "LynxID2025",
+    "status": "complete"
+  },
+  "lynx_t0.54.csv": {
+    "clusters": 420,
+    "date": "2026-11-19 15:52:13.880000",
+    "name": "lynx_t0.54",
+    "private": 0.38747,
+    "public": 0.36318,
+    "species": "LynxID2025",
+    "status": "complete"
+  },
+  "lynx_t0.58.csv": {
+    "clusters": 452,
+    "date": "2026-11-19 15:42:59.260000",
+    "name": "lynx_t0.58",
+    "private": 0.38232,
+    "public": 0.36314,
+    "species": "LynxID2025",
+    "status": "complete"
+  },
+  "lynx_t0.58_anchor0.5.csv": {
+    "clusters": 429,
+    "date": "2026-11-19 15:53:56.720000",
+    "name": "lynx_t0.58_anchor0.5",
+    "private": 0.38328,
+    "public": 0.36692,
+    "species": "LynxID2025",
+    "status": "complete"
+  },
+  "lynx_t0.62.csv": {
+    "clusters": 482,
+    "date": "2026-11-19 15:37:39.183000",
+    "name": "lynx_t0.62",
+    "private": 0.38048,
+    "public": 0.36141,
+    "species": "LynxID2025",
+    "status": "complete"
+  },
+  "lynx_t0.66.csv": {
+    "clusters": 513,
+    "date": "2026-11-19 15:30:50.590000",
+    "name": "lynx_t0.66",
+    "private": 0.37951,
+    "public": 0.36003,
+    "species": "LynxID2025",
+    "status": "SubmissionStatus.COMPLETE"
+  },
+  "lynx_t0.78.csv": {
+    "clusters": 588,
+    "date": "2026-11-19 15:31:25.187000",
+    "name": "lynx_t0.78",
+    "private": 0.36524,
+    "public": 0.35393,
+    "species": "LynxID2025",
+    "status": "SubmissionStatus.COMPLETE"
+  },
+  "salam_2.0_anchor.csv": {
+    "clusters": 343,
+    "date": "2026-11-19 16:16:20.353000",
+    "name": "salam_2.0_anchor",
+    "private": 0.38274,
+    "public": 0.34864,
+    "species": "SalamanderID2025",
+    "status": "complete"
+  },
+  "salam_2.0_date0.03.csv": {
+    "clusters": 343,
+    "date": "2026-11-19 16:51:38.293000",
+    "name": "salam_2.0_date0.03",
+    "private": 0.38165,
+    "public": 0.35202,
+    "species": "SalamanderID2025",
+    "status": "complete"
+  },
+  "salam_2.0_date0.05.csv": {
+    "clusters": 343,
+    "date": "2026-11-19 16:45:53.800000",
+    "name": "salam_2.0_date0.05",
+    "private": 0.38404,
+    "public": 0.3553,
+    "species": "SalamanderID2025",
+    "status": "complete"
+  },
+  "salam_2.0_date0.10.csv": {
+    "clusters": 344,
+    "date": "2026-11-19 16:46:43.847000",
+    "name": "salam_2.0_date0.10",
+    "private": 0.38034,
+    "public": 0.35645,
+    "species": "SalamanderID2025",
+    "status": "complete"
+  },
+  "salam_2.0_date0.20.csv": {
+    "clusters": 343,
+    "date": "2026-11-19 16:58:30.020000",
+    "name": "salam_2.0_date0.20",
+    "private": 0.3569,
+    "public": 0.3443,
+    "species": "SalamanderID2025",
+    "status": "complete"
+  },
+  "salam_2.0_date0.40.csv": {
+    "clusters": 228,
+    "date": "2026-11-19 16:59:02.913000",
+    "name": "salam_2.0_date0.40",
+    "private": 0.33538,
+    "public": 0.32144,
+    "species": "SalamanderID2025",
+    "status": "complete"
+  },
+  "salam_2.0_local2.5.csv": {
+    "clusters": 344,
+    "date": "2026-11-19 16:15:45.767000",
+    "name": "salam_2.0_local2.5",
+    "private": 0.38148,
+    "public": 0.34917,
+    "species": "SalamanderID2025",
+    "status": "complete"
+  },
+  "salam_date005_d1.8.csv": {
+    "clusters": 383,
+    "date": "2026-11-19 17:06:26.133000",
+    "name": "salam_date005_d1.8",
+    "private": 0.37237,
+    "public": 0.35948,
+    "species": "SalamanderID2025",
+    "status": "complete"
+  },
+  "salam_date005_d2.2.csv": {
+    "clusters": 313,
+    "date": "2026-11-19 17:07:16.013000",
+    "name": "salam_date005_d2.2",
+    "private": 0.37962,
+    "public": 0.3505,
+    "species": "SalamanderID2025",
+    "status": "complete"
+  },
+  "salam_direct_t0.14.csv": {
+    "clusters": 276,
+    "date": "2026-11-19 15:33:47.550000",
+    "name": "salam_direct_t0.14",
+    "private": 0.36866,
+    "public": 0.34241,
+    "species": "SalamanderID2025",
+    "status": "SubmissionStatus.COMPLETE"
+  },
+  "salam_mean1.4.csv": {
+    "clusters": 491,
+    "date": "2026-11-19 15:46:20.337000",
+    "name": "salam_mean1.4",
+    "private": 0.36929,
+    "public": 0.35844,
+    "species": "SalamanderID2025",
+    "status": "complete"
+  },
+  "salam_mean2.0.csv": {
+    "clusters": 343,
+    "date": "2026-11-19 15:22:32.327000",
+    "name": "salam_mean2.0",
+    "private": 0.38274,
+    "public": 0.34864,
+    "species": "SalamanderID2025",
+    "status": "SubmissionStatus.COMPLETE"
+  },
+  "salam_mean2.2.csv": {
+    "clusters": 312,
+    "date": "2026-11-19 15:23:24.477000",
+    "name": "salam_mean2.2",
+    "private": 0.37688,
+    "public": 0.34649,
+    "species": "SalamanderID2025",
+    "status": "SubmissionStatus.COMPLETE"
+  },
+  "salam_w5050.csv": {
+    "clusters": 344,
+    "date": "2026-11-19 16:20:46.117000",
+    "name": "salam_w5050",
+    "private": 0.38499,
+    "public": 0.35186,
+    "species": "SalamanderID2025",
+    "status": "complete"
+  },
+  "turtle_2.3_date0.05.csv": {
+    "clusters": 216,
+    "date": "2026-11-19 16:47:34.063000",
+    "name": "turtle_2.3_date0.05",
+    "private": 0.38137,
+    "public": 0.38223,
+    "species": "SeaTurtleID2022",
+    "status": "complete"
+  },
+  "turtle_2.3_date0.10.csv": {
+    "clusters": 216,
+    "date": "2026-11-19 16:48:24.400000",
+    "name": "turtle_2.3_date0.10",
+    "private": 0.38592,
+    "public": 0.38506,
+    "species": "SeaTurtleID2022",
+    "status": "complete"
+  },
+  "turtle_2.3_date0.15.csv": {
+    "clusters": 216,
+    "date": "2026-11-19 16:49:58.137000",
+    "name": "turtle_2.3_date0.15",
+    "private": 0.39296,
+    "public": 0.38484,
+    "species": "SeaTurtleID2022",
+    "status": "complete"
+  },
+  "turtle_2.3_date0.20.csv": {
+    "clusters": 217,
+    "date": "2026-11-19 16:50:48.193000",
+    "name": "turtle_2.3_date0.20",
+    "private": 0.39296,
+    "public": 0.38903,
+    "species": "SeaTurtleID2022",
+    "status": "complete"
+  },
+  "turtle_2.3_date0.30.csv": {
+    "clusters": 217,
+    "date": "2026-11-19 16:53:58.943000",
+    "name": "turtle_2.3_date0.30",
+    "private": 0.39296,
+    "public": 0.38903,
+    "species": "SeaTurtleID2022",
+    "status": "complete"
+  },
+  "turtle_2.3_date0.45.csv": {
+    "clusters": 217,
+    "date": "2026-11-19 16:54:31.873000",
+    "name": "turtle_2.3_date0.45",
+    "private": 0.39296,
+    "public": 0.38903,
+    "species": "SeaTurtleID2022",
+    "status": "complete"
+  },
+  "turtle_2.3_date0.70.csv": {
+    "clusters": 157,
+    "date": "2026-11-19 16:55:06.053000",
+    "name": "turtle_2.3_date0.70",
+    "private": 0.43233,
+    "public": 0.4212,
+    "species": "SeaTurtleID2022",
+    "status": "complete"
+  },
+  "turtle_2.3_date0.75.csv": {
+    "clusters": 36,
+    "date": "2026-11-19 17:00:19.737000",
+    "name": "turtle_2.3_date0.75",
+    "private": 0.33838,
+    "public": 0.33614,
+    "species": "SeaTurtleID2022",
+    "status": "complete"
+  },
+  "turtle_2.3_date0.80.csv": {
+    "clusters": 36,
+    "date": "2026-11-19 17:00:52.950000",
+    "name": "turtle_2.3_date0.80",
+    "private": 0.33838,
+    "public": 0.33614,
+    "species": "SeaTurtleID2022",
+    "status": "complete"
+  },
+  "turtle_2.3_date0.85.csv": {
+    "clusters": 36,
+    "date": "2026-11-19 17:01:25.853000",
+    "name": "turtle_2.3_date0.85",
+    "private": 0.33838,
+    "public": 0.33614,
+    "species": "SeaTurtleID2022",
+    "status": "complete"
+  },
+  "turtle_2.3_date0.90.csv": {
+    "clusters": 36,
+    "date": "2026-11-19 17:02:16.413000",
+    "name": "turtle_2.3_date0.90",
+    "private": 0.33838,
+    "public": 0.33614,
+    "species": "SeaTurtleID2022",
+    "status": "complete"
+  },
+  "turtle_2.3_date1.0.csv": {
+    "clusters": 36,
+    "date": "2026-11-19 16:56:33.397000",
+    "name": "turtle_2.3_date1.0",
+    "private": 0.33838,
+    "public": 0.33614,
+    "species": "SeaTurtleID2022",
+    "status": "complete"
+  },
+  "turtle_2.3_date1.5.csv": {
+    "clusters": 36,
+    "date": "2026-11-19 16:57:23.810000",
+    "name": "turtle_2.3_date1.5",
+    "private": 0.33838,
+    "public": 0.33614,
+    "species": "SeaTurtleID2022",
+    "status": "complete"
+  },
+  "turtle_2.3_date3.0.csv": {
+    "clusters": 36,
+    "date": "2026-11-19 16:57:57.227000",
+    "name": "turtle_2.3_date3.0",
+    "private": 0.33838,
+    "public": 0.33614,
+    "species": "SeaTurtleID2022",
+    "status": "complete"
+  },
+  "turtle_2.3_noanchor.csv": {
+    "clusters": 216,
+    "date": "2026-11-19 16:16:54.613000",
+    "name": "turtle_2.3_noanchor",
+    "private": 0.37854,
+    "public": 0.36729,
+    "species": "SeaTurtleID2022",
+    "status": "complete"
+  },
+  "turtle_date070_d2.0.csv": {
+    "clusters": 157,
+    "date": "2026-11-19 17:05:02.907000",
+    "name": "turtle_date070_d2.0",
+    "private": 0.43233,
+    "public": 0.4212,
+    "species": "SeaTurtleID2022",
+    "status": "complete"
+  },
+  "turtle_date070_d2.6.csv": {
+    "clusters": 157,
+    "date": "2026-11-19 17:05:52.537000",
+    "name": "turtle_date070_d2.6",
+    "private": 0.43233,
+    "public": 0.4212,
+    "species": "SeaTurtleID2022",
+    "status": "complete"
+  },
+  "turtle_mean1.8.csv": {
+    "clusters": 277,
+    "date": "2026-11-19 15:29:05.380000",
+    "name": "turtle_mean1.8",
+    "private": 0.36081,
+    "public": 0.33315,
+    "species": "SeaTurtleID2022",
+    "status": "SubmissionStatus.COMPLETE"
+  },
+  "turtle_mean2.1.csv": {
+    "clusters": 240,
+    "date": "2026-11-19 16:09:33.297000",
+    "name": "turtle_mean2.1",
+    "private": 0.37244,
+    "public": 0.35805,
+    "species": "SeaTurtleID2022",
+    "status": "complete"
+  },
+  "turtle_mean2.3.csv": {
+    "clusters": 216,
+    "date": "2026-11-19 15:29:58.883000",
+    "name": "turtle_mean2.3",
+    "private": 0.37854,
+    "public": 0.36729,
+    "species": "SeaTurtleID2022",
+    "status": "SubmissionStatus.COMPLETE"
+  },
+  "turtle_mean2.5.csv": {
+    "clusters": 200,
+    "date": "2026-11-19 15:35:20.620000",
+    "name": "turtle_mean2.5",
+    "private": 0.37665,
+    "public": 0.37125,
+    "species": "SeaTurtleID2022",
+    "status": "complete"
+  },
+  "turtle_mean2.5_anchor0.5.csv": {
+    "clusters": 200,
+    "date": "2026-11-19 15:54:48.317000",
+    "name": "turtle_mean2.5_anchor0.5",
+    "private": 0.37665,
+    "public": 0.37125,
+    "species": "SeaTurtleID2022",
+    "status": "complete"
+  },
+  "turtle_mean2.5_merge2.csv": {
+    "clusters": 200,
+    "date": "2026-11-19 15:55:39.470000",
+    "name": "turtle_mean2.5_merge2",
+    "private": 0.37665,
+    "public": 0.37125,
+    "species": "SeaTurtleID2022",
+    "status": "complete"
+  },
+  "turtle_mean2.7.csv": {
+    "clusters": 192,
+    "date": "2026-11-19 15:35:56.013000",
+    "name": "turtle_mean2.7",
+    "private": 0.37633,
+    "public": 0.37376,
+    "species": "SeaTurtleID2022",
+    "status": "complete"
+  },
+  "turtle_mean3.0.csv": {
+    "clusters": 192,
+    "date": "2026-11-19 15:36:48.720000",
+    "name": "turtle_mean3.0",
+    "private": 0.37633,
+    "public": 0.37376,
+    "species": "SeaTurtleID2022",
+    "status": "complete"
+  },
+  "turtle_w9010.csv": {
+    "clusters": 271,
+    "date": "2026-11-19 16:21:37.720000",
+    "name": "turtle_w9010",
+    "private": 0.3626,
+    "public": 0.35166,
+    "species": "SeaTurtleID2022",
+    "status": "complete"
+  }
+}
