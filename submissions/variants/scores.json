@@ -5,6 +5,47 @@
     "public": 0.35805,
     "status": "complete"
   },
+  "combo_turtle2.3_lynx0.66.csv": {
+    "clusters": {
+      "LynxID2025": 513,
+      "SalamanderID2025": 457,
+      "SeaTurtleID2022": 216,
+      "TexasHornedLizards": 179
+    },
+    "date": "2026-11-19 15:46:53.770000",
+    "name": "combo_turtle2.3_lynx0.66",
+    "private": 0.3856,
+    "public": 0.36926,
+    "species": "combo",
+    "status": "complete"
+  },
+  "lizard_local3.0.csv": {
+    "clusters": 182,
+    "date": "2026-11-19 15:45:46.700000",
+    "name": "lizard_local3.0",
+    "private": 0.37993,
+    "public": 0.3732,
+    "species": "TexasHornedLizards",
+    "status": "complete"
+  },
+  "lizard_mean1.2.csv": {
+    "clusters": 227,
+    "date": "2026-11-19 15:44:56.467000",
+    "name": "lizard_mean1.2",
+    "private": 0.39672,
+    "public": 0.36409,
+    "species": "TexasHornedLizards",
+    "status": "complete"
+  },
+  "lizard_mean1.3.csv": {
+    "clusters": 211,
+    "date": "2026-11-19 15:44:05.797000",
+    "name": "lizard_mean1.3",
+    "private": 0.39227,
+    "public": 0.37812,
+    "species": "TexasHornedLizards",
+    "status": "complete"
+  },
   "lizard_mean2.0.csv": {
     "clusters": 137,
     "date": "2026-11-19 15:24:14.977000",
@@ -50,6 +91,24 @@
     "species": "LynxID2025",
     "status": "SubmissionStatus.COMPLETE"
   },
+  "lynx_t0.58.csv": {
+    "clusters": 452,
+    "date": "2026-11-19 15:42:59.260000",
+    "name": "lynx_t0.58",
+    "private": 0.38232,
+    "public": 0.36314,
+    "species": "LynxID2025",
+    "status": "complete"
+  },
+  "lynx_t0.62.csv": {
+    "clusters": 482,
+    "date": "2026-11-19 15:37:39.183000",
+    "name": "lynx_t0.62",
+    "private": 0.38048,
+    "public": 0.36141,
+    "species": "LynxID2025",
+    "status": "complete"
+  },
   "lynx_t0.66.csv": {
     "clusters": 513,
     "date": "2026-11-19 15:30:50.590000",
@@ -70,12 +129,21 @@
   },
   "salam_direct_t0.14.csv": {
     "clusters": 276,
-    "date": "2026-11-19 15:21:39.093000",
+    "date": "2026-11-19 15:33:47.550000",
     "name": "salam_direct_t0.14",
     "private": 0.36866,
     "public": 0.34241,
     "species": "SalamanderID2025",
     "status": "SubmissionStatus.COMPLETE"
+  },
+  "salam_mean1.4.csv": {
+    "clusters": 491,
+    "date": "2026-11-19 15:46:20.337000",
+    "name": "salam_mean1.4",
+    "private": 0.36929,
+    "public": 0.35844,
+    "species": "SalamanderID2025",
+    "status": "complete"
   },
   "salam_mean2.0.csv": {
     "clusters": 343,
@@ -112,5 +180,32 @@
     "public": 0.36729,
     "species": "SeaTurtleID2022",
     "status": "SubmissionStatus.COMPLETE"
+  },
+  "turtle_mean2.5.csv": {
+    "clusters": 200,
+    "date": "2026-11-19 15:35:20.620000",
+    "name": "turtle_mean2.5",
+    "private": 0.37665,
+    "public": 0.37125,
+    "species": "SeaTurtleID2022",
+    "status": "complete"
+  },
+  "turtle_mean2.7.csv": {
+    "clusters": 192,
+    "date": "2026-11-19 15:35:56.013000",
+    "name": "turtle_mean2.7",
+    "private": 0.37633,
+    "public": 0.37376,
+    "species": "SeaTurtleID2022",
+    "status": "complete"
+  },
+  "turtle_mean3.0.csv": {
+    "clusters": 192,
+    "date": "2026-11-19 15:36:48.720000",
+    "name": "turtle_mean3.0",
+    "private": 0.37633,
+    "public": 0.37376,
+    "species": "SeaTurtleID2022",
+    "status": "complete"
   }
 }
