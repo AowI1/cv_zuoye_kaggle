@@ -111,7 +111,10 @@ class ArcFaceHead(torch.nn.Module):
         self.scale = scale
 
     def forward(self, features: torch.Tensor, labels: torch.Tensor | None = None):
-        cos = F.linear(F.normalize(features), F.normalize(self.weight))
+        # fp32 here even under autocast: acos near +/-1 is numerically fragile
+        # in fp16 and stalls the margin gradient.
+        cos = F.linear(F.normalize(features.float()),
+                       F.normalize(self.weight.float()))
         if labels is None:
             return cos
         theta = torch.acos(cos.clamp(-1 + 1e-7, 1 - 1e-7))
@@ -129,16 +132,20 @@ class TrainCfg:
     backbone_lr: float = 1e-5
     head_lr: float = 1e-3
     weight_decay: float = 1e-4
-    workers: int = 4
+    workers: int = 2
     size: int = 440
+    amp: bool = True
+    warmup_epochs: int = 0
     seed: int = 42
 
 
 def train(model: torch.nn.Module, head: torch.nn.Module, dataset: IdentityDataset,
-          cfg: TrainCfg, device: str, log=print):
+          cfg: TrainCfg, device: str, log=print, on_epoch_end=None):
+    dl_kw = ({"prefetch_factor": 2, "persistent_workers": True}
+             if cfg.workers > 0 else {})
     loader = torch.utils.data.DataLoader(
         dataset, batch_sampler=PKBatchSampler(dataset.labels, cfg.p, cfg.k, cfg.seed),
-        num_workers=cfg.workers, prefetch_factor=2, persistent_workers=cfg.workers > 0,
+        num_workers=cfg.workers, **dl_kw,
     )
     opt = torch.optim.AdamW([
         {"params": model.parameters(), "lr": cfg.backbone_lr},
@@ -150,21 +157,27 @@ def train(model: torch.nn.Module, head: torch.nn.Module, dataset: IdentityDatase
         pct_start=0.15)
     model.train()
     head.train()
+    base_margin = head.margin
     for epoch in range(cfg.epochs):
+        head.margin = 0.0 if epoch < cfg.warmup_epochs else base_margin
         total, correct, loss_sum, n = 0, 0, 0.0, 0
         for step, (x, y) in enumerate(loader):
             x = x.to(device, non_blocking=True)
             y = y.to(device, non_blocking=True)
-            feats = model(x)
-            logits = head(feats, y)
-            loss = F.cross_entropy(logits, y, label_smoothing=0.1)
+            with torch.autocast(device_type=device.split(":")[0],
+                                dtype=torch.float16, enabled=cfg.amp):
+                feats = model(x)
+                logits = head(feats, y)
+                loss = F.cross_entropy(logits, y, label_smoothing=0.1)
             opt.zero_grad(set_to_none=True)
             loss.backward()
             torch.nn.utils.clip_grad_norm_(list(model.parameters()) + list(head.parameters()), 5.0)
             opt.step()
             sched.step()
             with torch.no_grad():
-                acc = (logits.argmax(1) == y).float().mean().item()
+                acc = (logits.float().argmax(1) == y).float().mean().item()
+            if device == "mps" and step % 25 == 24:
+                torch.mps.empty_cache()
             total += acc * len(y)
             correct += acc * len(y)
             loss_sum += loss.item() * len(y)
@@ -174,3 +187,5 @@ def train(model: torch.nn.Module, head: torch.nn.Module, dataset: IdentityDatase
                     f"loss {loss_sum/max(n,1):.3f} acc {total/max(n,1):.3f}")
         log(f"epoch {epoch+1}: loss {loss_sum/max(n,1):.4f} "
             f"train_acc {total/max(n,1):.4f} lr {sched.get_last_lr()}")
+        if on_epoch_end is not None:
+            on_epoch_end(epoch + 1)

@@ -80,6 +80,42 @@ VARIANTS = [
     ("LynxID2025", "lynx_t0.58_anchor0.5", {"threshold": 0.58, "anchor_score": 0.5}, None),
     ("SeaTurtleID2022", "turtle_mean2.5_anchor0.5", {"anchor_score": 0.5}, 2.5),
     ("SeaTurtleID2022", "turtle_mean2.5_merge2", {"merge_small": 2}, 2.5),
+
+    # --- round 4: lynx threshold still falling; find where it turns --------
+    ("LynxID2025", "lynx_t0.46", {"threshold": 0.46}, None),
+    ("LynxID2025", "lynx_t0.42", {"threshold": 0.42}, None),
+    ("LynxID2025", "lynx_t0.38", {"threshold": 0.38}, None),
+    ("LynxID2025", "lynx_t0.34", {"threshold": 0.34}, None),
+    ("LynxID2025", "lynx_t0.30", {"threshold": 0.30}, None),
+    ("LynxID2025", "lynx_t0.26", {"threshold": 0.26}, None),
+    ("LynxID2025", "lynx_t0.22", {"threshold": 0.22}, None),
+    ("LynxID2025", "lynx_t0.18", {"threshold": 0.18}, None),
+    ("LynxID2025", "lynx_t0.14", {"threshold": 0.14}, None),
+    ("SeaTurtleID2022", "turtle_mean2.1", {}, 2.1),
+    ("LynxID2025", "lynx_t0.24", {"threshold": 0.24}, None),
+
+    # --- round 7: post-processing knobs at the lynx optimum -----------------
+    ("LynxID2025", "lynx_022_anchor0.5", {"threshold": 0.22, "anchor_score": 0.5}, None),
+    ("LynxID2025", "lynx_022_anchor0.4", {"threshold": 0.22, "anchor_score": 0.4}, None),
+    ("LynxID2025", "lynx_022_merge2", {"threshold": 0.22, "merge_small": 2}, None),
+    ("LynxID2025", "lynx_022_rerank", {"threshold": 0.22, "use_rerank": True}, None),
+    ("SalamanderID2025", "salam_2.0_local2.5", {"local_weight": 2.5}, 2.0),
+    ("SalamanderID2025", "salam_2.0_anchor", {"anchor": True}, 2.0),
+    ("SeaTurtleID2022", "turtle_2.3_noanchor", {"anchor": False}, 2.3),
+
+    # --- round 8: backbone weighting per species ---------------------------
+    ("LynxID2025", "lynx_022_w5050",
+     {"threshold": 0.22, "weights": {"miewid": 0.5, "mega": 0.5, "local": 0.0}}, None),
+    ("LynxID2025", "lynx_022_w9010",
+     {"threshold": 0.22, "weights": {"miewid": 0.9, "mega": 0.1, "local": 0.0}}, None),
+    ("TexasHornedLizards", "lizard_w3070",
+     {"weights": {"miewid": 0.3, "mega": 0.7, "local": 2.0}}, 1.2),
+    ("TexasHornedLizards", "lizard_w7030",
+     {"weights": {"miewid": 0.7, "mega": 0.3, "local": 2.0}}, 1.2),
+    ("SalamanderID2025", "salam_w5050",
+     {"weights": {"miewid": 0.5, "mega": 0.5, "local": 1.5}}, 2.0),
+    ("SeaTurtleID2022", "turtle_w9010",
+     {"weights": {"miewid": 0.9, "mega": 0.1, "local": 0.0}}, 2.3),
 ]
 
 # Combinations of the directions that improved both public and private scores.
@@ -98,6 +134,37 @@ COMBOS = [
         "TexasHornedLizards": ({"local_weight": 3.0}, 1.3),
         "LynxID2025": ({"threshold": 0.58}, None),
         "SeaTurtleID2022": ({}, 2.5),
+    }),
+    # per-species private-score winners
+    ("combo_best3", {
+        "TexasHornedLizards": ({}, 1.2),
+        "LynxID2025": ({"threshold": 0.50}, None),
+        "SeaTurtleID2022": ({}, 2.5),
+    }),
+    # + salamander density 2.0 (private liked it, public did not)
+    ("combo_best4", {
+        "TexasHornedLizards": ({}, 1.2),
+        "LynxID2025": ({"threshold": 0.50}, None),
+        "SeaTurtleID2022": ({}, 2.5),
+        "SalamanderID2025": ({}, 2.0),
+    }),
+    ("combo_best5", {
+        "TexasHornedLizards": ({}, 1.2),
+        "LynxID2025": ({"threshold": 0.38}, None),
+        "SeaTurtleID2022": ({}, 2.5),
+        "SalamanderID2025": ({}, 2.0),
+    }),
+    ("combo_best6", {
+        "TexasHornedLizards": ({}, 1.2),
+        "LynxID2025": ({"threshold": 0.26}, None),
+        "SeaTurtleID2022": ({}, 2.3),
+        "SalamanderID2025": ({}, 2.0),
+    }),
+    ("combo_best7", {
+        "TexasHornedLizards": ({}, 1.2),
+        "LynxID2025": ({"threshold": 0.22}, None),
+        "SeaTurtleID2022": ({}, 2.3),
+        "SalamanderID2025": ({}, 2.0),
     }),
 ]
 
@@ -162,8 +229,9 @@ def labels_for(ds: str, best: dict, override: dict, target_mean: float | None,
     merged = {**best, **override}
     cfg = ms.config_from(merged, ds)
     # extra knobs that are Config fields rather than entries of best_*.json
-    for k in ("anchor_score", "anchor_margin", "merge_small", "merge_threshold",
-              "method", "split_big", "split_threshold"):
+    for k in ("anchor", "anchor_score", "anchor_margin", "merge_small",
+              "merge_threshold", "method", "split_big", "split_threshold",
+              "use_rerank", "rr_k1", "rr_k2", "rr_lambda"):
         if k in override:
             cfg = replace(cfg, **{k: override[k]})
     w_local = float(merged.get("local_weight", 0.0))

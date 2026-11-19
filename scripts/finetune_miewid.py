@@ -36,6 +36,11 @@ def main() -> int:
     ap.add_argument("--p", type=int, default=8)
     ap.add_argument("--k", type=int, default=4)
     ap.add_argument("--workers", type=int, default=4)
+    ap.add_argument("--head-lr", type=float, default=1e-3)
+    ap.add_argument("--backbone-lr", type=float, default=1e-5)
+    ap.add_argument("--margin", type=float, default=0.3)
+    ap.add_argument("--warmup-epochs", type=int, default=0,
+                    help="epochs trained with margin=0 (plain softmax)")
     ap.add_argument("--seed", type=int, default=42)
     ap.add_argument("--out", default="")
     args = ap.parse_args()
@@ -67,14 +72,24 @@ def main() -> int:
     for p in model.parameters():
         p.requires_grad = True
 
-    head = ArcFaceHead(2152, len(ds.classes)).to(device)
+    head = ArcFaceHead(2152, len(ds.classes), margin=args.margin).to(device)
     cfg = TrainCfg(epochs=args.epochs, p=args.p, k=args.k,
-                   workers=args.workers, size=args.size, seed=args.seed)
+                   workers=args.workers, size=args.size, seed=args.seed,
+                   backbone_lr=args.backbone_lr, head_lr=args.head_lr,
+                   warmup_epochs=args.warmup_epochs)
+    out = Path(args.out) if args.out else (MODELS / "miewid-ft" / name / "best.pt")
+
+    def checkpoint(_epoch: int) -> None:
+        out.parent.mkdir(parents=True, exist_ok=True)
+        torch.save({"backbone": model.state_dict(), "head": head.state_dict(),
+                    "species": species, "classes": ds.classes,
+                    "config": cfg.__dict__}, out)
+        print(f"  [ckpt] epoch {_epoch} -> {out}", flush=True)
+
     t0 = time.time()
-    train(model, head, ds, cfg, device)
+    train(model, head, ds, cfg, device, on_epoch_end=checkpoint)
     print(f"[{name}] trained in {(time.time()-t0)/60:.1f} min")
 
-    out = Path(args.out) if args.out else (MODELS / "miewid-ft" / name / "best.pt")
     out.parent.mkdir(parents=True, exist_ok=True)
     torch.save({"backbone": model.state_dict(), "head": head.state_dict(),
                 "species": species, "classes": ds.classes,
