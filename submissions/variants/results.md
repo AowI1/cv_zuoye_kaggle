@@ -94,5 +94,7 @@
 | combo_best8 | combo | 0.37947 | 0.46554 | +0.0214 | +0.0931 | +0.086 | +0.372 |
 | lizard_crop085 | TexasHornedLizards | 0.43039 | 0.52224 | +0.0723 | +0.1498 | +0.289 | +0.599 |
 | salam_crop085 | SalamanderID2025 | 0.42483 | 0.51726 | +0.0668 | +0.1448 | +0.267 | +0.579 |
+| lizard_crop075 | TexasHornedLizards | 0.43187 | 0.51932 | +0.0738 | +0.1469 | +0.295 | +0.588 |
+| lizard_crop070 | TexasHornedLizards | 0.45065 | 0.51651 | +0.0926 | +0.1441 | +0.370 | +0.576 |
 
 Δ public = variant − baseline; Δ ARI = 4 × Δ public (overall is the four-species mean).

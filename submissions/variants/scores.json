@@ -159,6 +159,24 @@
     "species": "combo",
     "status": "complete"
   },
+  "lizard_crop070.csv": {
+    "clusters": 227,
+    "date": "2026-11-19 17:29:27.307000",
+    "name": "lizard_crop070",
+    "private": 0.51651,
+    "public": 0.45065,
+    "species": "TexasHornedLizards",
+    "status": "complete"
+  },
+  "lizard_crop075.csv": {
+    "clusters": 227,
+    "date": "2026-11-19 17:28:54.913000",
+    "name": "lizard_crop075",
+    "private": 0.51932,
+    "public": 0.43187,
+    "species": "TexasHornedLizards",
+    "status": "complete"
+  },
   "lizard_crop085.csv": {
     "clusters": 227,
     "date": "2026-11-19 17:25:44.947000",
