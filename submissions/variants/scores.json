@@ -216,6 +216,42 @@
     "species": "TexasHornedLizards",
     "status": "SubmissionStatus.COMPLETE"
   },
+  "lynx_022_anchor0.4.csv": {
+    "clusters": 123,
+    "date": "2026-11-19 16:13:49.590000",
+    "name": "lynx_022_anchor0.4",
+    "private": 0.42257,
+    "public": 0.38032,
+    "species": "LynxID2025",
+    "status": "complete"
+  },
+  "lynx_022_anchor0.5.csv": {
+    "clusters": 126,
+    "date": "2026-11-19 16:12:58.910000",
+    "name": "lynx_022_anchor0.5",
+    "private": 0.42257,
+    "public": 0.37901,
+    "species": "LynxID2025",
+    "status": "complete"
+  },
+  "lynx_022_merge2.csv": {
+    "clusters": 129,
+    "date": "2026-11-19 16:14:22.673000",
+    "name": "lynx_022_merge2",
+    "private": 0.42261,
+    "public": 0.3704,
+    "species": "LynxID2025",
+    "status": "complete"
+  },
+  "lynx_022_rerank.csv": {
+    "clusters": 159,
+    "date": "2026-11-19 16:15:11.620000",
+    "name": "lynx_022_rerank",
+    "private": 0.39797,
+    "public": 0.36931,
+    "species": "LynxID2025",
+    "status": "complete"
+  },
   "lynx_local0.1.csv": {
     "clusters": 588,
     "date": "2026-11-19 15:31:58.790000",
@@ -378,6 +414,24 @@
     "species": "LynxID2025",
     "status": "SubmissionStatus.COMPLETE"
   },
+  "salam_2.0_anchor.csv": {
+    "clusters": 343,
+    "date": "2026-11-19 16:16:20.353000",
+    "name": "salam_2.0_anchor",
+    "private": 0.38274,
+    "public": 0.34864,
+    "species": "SalamanderID2025",
+    "status": "complete"
+  },
+  "salam_2.0_local2.5.csv": {
+    "clusters": 344,
+    "date": "2026-11-19 16:15:45.767000",
+    "name": "salam_2.0_local2.5",
+    "private": 0.38148,
+    "public": 0.34917,
+    "species": "SalamanderID2025",
+    "status": "complete"
+  },
   "salam_direct_t0.14.csv": {
     "clusters": 276,
     "date": "2026-11-19 15:33:47.550000",
@@ -413,6 +467,15 @@
     "public": 0.34649,
     "species": "SalamanderID2025",
     "status": "SubmissionStatus.COMPLETE"
+  },
+  "turtle_2.3_noanchor.csv": {
+    "clusters": 216,
+    "date": "2026-11-19 16:16:54.613000",
+    "name": "turtle_2.3_noanchor",
+    "private": 0.37854,
+    "public": 0.36729,
+    "species": "SeaTurtleID2022",
+    "status": "complete"
   },
   "turtle_mean1.8.csv": {
     "clusters": 277,
