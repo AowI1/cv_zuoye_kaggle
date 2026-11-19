@@ -1,0 +1,167 @@
+{
+  "LynxID2025": {
+    "n_test": 946,
+    "n_clusters": 549,
+    "mean_cluster_size": 1.72,
+    "seconds": 0.4,
+    "config": {
+      "weights": {
+        "miewid": 0.7,
+        "mega": 0.3,
+        "local": 0.0
+      },
+      "threshold": 0.72,
+      "use_rerank": false,
+      "rr": [
+        20,
+        3,
+        0.1
+      ],
+      "post": {
+        "merge_small": 1,
+        "merge_threshold": 0.4,
+        "split_big": 1000000000,
+        "split_threshold": 0.65,
+        "anchor": true
+      },
+      "consensus": false,
+      "dataset": "LynxID2025",
+      "score": 0.3048,
+      "std": 0.0236,
+      "label": "anchor_threshold_joint",
+      "use_orientation_calibration": false,
+      "new_id_frac": 0.4,
+      "seeds": 3,
+      "elapsed_s": 20.204832077026367,
+      "local_method": "root_sift",
+      "local_weight": 0.0,
+      "score_global_only": 0.139,
+      "score_with_local": 0.3048,
+      "target_mean_cluster_size": 1.612,
+      "heldout_ari": 0.3128,
+      "heldout_ari_std": 0.0258
+    }
+  },
+  "SalamanderID2025": {
+    "n_test": 689,
+    "n_clusters": 276,
+    "mean_cluster_size": 2.5,
+    "seconds": 0.2,
+    "config": {
+      "weights": {
+        "miewid": 0.7,
+        "mega": 0.3,
+        "local": 1.5
+      },
+      "threshold": 0.14,
+      "use_rerank": false,
+      "rr": [
+        20,
+        6,
+        0.3
+      ],
+      "post": {
+        "merge_small": 2,
+        "merge_threshold": 0.4,
+        "split_big": 1000000000,
+        "split_threshold": 0.65,
+        "anchor": false
+      },
+      "consensus": false,
+      "dataset": "SalamanderID2025",
+      "score": 0.31595510056738085,
+      "std": 0.027495558950335452,
+      "label": "stage1",
+      "use_orientation_calibration": false,
+      "new_id_frac": 0.4,
+      "seeds": 2,
+      "elapsed_s": 48.66590619087219,
+      "local_method": "root_sift",
+      "local_weight": 1.5,
+      "score_global_only": 0.1523600806097059,
+      "score_with_local": 0.31595510056738085,
+      "target_mean_cluster_size": 1.506,
+      "heldout_ari": 0.3252,
+      "heldout_ari_std": 0.0326
+    }
+  },
+  "SeaTurtleID2022": {
+    "n_test": 500,
+    "n_clusters": 240,
+    "mean_cluster_size": 2.08,
+    "seconds": 0.4,
+    "config": {
+      "weights": {
+        "miewid": 0.7,
+        "mega": 0.3,
+        "local": 0.0
+      },
+      "threshold": 0.18,
+      "use_rerank": false,
+      "rr": [
+        20,
+        6,
+        0.3
+      ],
+      "post": {
+        "merge_small": 1,
+        "merge_threshold": 0.4,
+        "split_big": 1000000000,
+        "split_threshold": 0.65,
+        "anchor": true
+      },
+      "consensus": false,
+      "dataset": "SeaTurtleID2022",
+      "score": 0.743680246486885,
+      "std": 0.011131282631021694,
+      "label": "stage3",
+      "use_orientation_calibration": false,
+      "new_id_frac": 0.4,
+      "seeds": 4,
+      "elapsed_s": 26.022685050964355,
+      "local_method": "root_sift",
+      "local_weight": 0.0,
+      "score_global_only": 0.743680246486885,
+      "score_with_local": 0.7413029188352098,
+      "target_mean_cluster_size": 1.921,
+      "heldout_ari": 0.7485,
+      "heldout_ari_std": 0.0106
+    }
+  },
+  "TexasHornedLizards": {
+    "n_test": 274,
+    "n_clusters": 179,
+    "mean_cluster_size": 1.53,
+    "seconds": 0.0,
+    "config": {
+      "weights": {
+        "miewid": 0.5,
+        "mega": 0.5,
+        "local": 2.0
+      },
+      "threshold": 0.4200000000000001,
+      "use_rerank": false,
+      "rr": [
+        20,
+        6,
+        0.3
+      ],
+      "post": {
+        "merge_small": 1,
+        "merge_threshold": 0.4,
+        "split_big": 1000000000,
+        "split_threshold": 0.65,
+        "anchor": false
+      },
+      "consensus": false,
+      "dataset": "TexasHornedLizards",
+      "zero_shot": true,
+      "local_method": "root_sift",
+      "local_weight": 2.0,
+      "score_global_only": null,
+      "score_with_local": null,
+      "silhouette": 0.16013219952583313,
+      "n_clusters": 179
+    }
+  }
+}

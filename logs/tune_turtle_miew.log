@@ -1,0 +1,36 @@
+[SeaTurtleID2022] 3 splits ready (query sizes [500, 500, 500])
+stage1: ARI=0.5432 ± 0.0562 weights={'miewid': 1.0} t=0.180
+stage2: re-ranking helps: (5, 3, 0.5) ARI=0.7038
+stage3: post={'merge_small': 1, 'merge_threshold': 0.4, 'split_big': 1000000000, 'split_threshold': 0.65, 'anchor': True} ARI=0.7042
+stage4: consensus ARI=0.4997
+stage5: orientation calibration ARI=0.6958
+
+BEST [SeaTurtleID2022] ARI=0.7042 ± 0.0371 (stage3) -> /Users/fy/Desktop/kaggle/configs/best_SeaTurtleID2022.json
+{
+  "dataset": "SeaTurtleID2022",
+  "score": 0.7042431858497099,
+  "std": 0.03713686746786601,
+  "label": "stage3",
+  "weights": {
+    "miewid": 1.0
+  },
+  "threshold": 0.18,
+  "use_rerank": true,
+  "rr": [
+    5,
+    3,
+    0.5
+  ],
+  "post": {
+    "merge_small": 1,
+    "merge_threshold": 0.4,
+    "split_big": 1000000000,
+    "split_threshold": 0.65,
+    "anchor": true
+  },
+  "consensus": false,
+  "use_orientation_calibration": false,
+  "new_id_frac": 0.4,
+  "seeds": 3,
+  "elapsed_s": 19.83860993385315
+}

@@ -1,0 +1,11 @@
+# large artefacts (not redistributable / over GitHub limits)
+data/
+models/
+.venv/
+# python / macOS noise
+__pycache__/
+*.pyc
+*.pyo
+.ipynb_checkpoints/
+.DS_Store
+*.egg-info/

@@ -1,0 +1,1 @@
+{"backbone": "miewid", "dataset": "TexasHornedLizards", "split": "test", "n": 274, "size": 440, "tta": false, "letterbox": false, "preprocess": true}

@@ -1,0 +1,68 @@
+[LynxID2025] 4 splits ready (query sizes [600, 600, 600, 600])
+stage1: ARI=0.1361 ± 0.0121 weights={'miewid': 0.7, 'mega': 0.3} t=0.280
+stage2: re-ranking helps: (20, 3, 0.1) ARI=0.1415
+stage3: post={'merge_small': 1, 'merge_threshold': 0.4, 'split_big': 1000000000, 'split_threshold': 0.65, 'anchor': True} ARI=0.2026
+stage4: consensus ARI=0.1045
+stage5: orientation calibration ARI=0.1206
+
+BEST [LynxID2025] ARI=0.2026 ± 0.0214 (stage3) -> /Users/fy/Desktop/kaggle/configs/best_LynxID2025.json
+{
+  "dataset": "LynxID2025",
+  "score": 0.2025885053822821,
+  "std": 0.021415250385521615,
+  "label": "stage3",
+  "weights": {
+    "miewid": 0.7,
+    "mega": 0.3
+  },
+  "threshold": 0.28,
+  "use_rerank": true,
+  "rr": [
+    20,
+    3,
+    0.1
+  ],
+  "post": {
+    "merge_small": 1,
+    "merge_threshold": 0.4,
+    "split_big": 1000000000,
+    "split_threshold": 0.65,
+    "anchor": true
+  },
+  "consensus": false,
+  "use_orientation_calibration": false,
+  "new_id_frac": 0.4,
+  "seeds": 4,
+  "elapsed_s": 19.609771013259888
+}
+[SalamanderID2025] 4 splits ready (query sizes [600, 600, 600, 600])
+stage1: ARI=0.1524 ± 0.0257 weights={'miewid': 0.7, 'mega': 0.3} t=0.060
+stage2: re-ranking does not help (0.1082 < 0.1524)
+stage3: post={'merge_small': 1, 'merge_threshold': 0.4, 'split_big': 1000000000, 'split_threshold': 0.65, 'anchor': False} ARI=0.1524
+stage4: consensus ARI=0.1232
+stage5: orientation calibration ARI=0.1301
+
+BEST [SalamanderID2025] ARI=0.1524 ± 0.0257 (stage1) -> /Users/fy/Desktop/kaggle/configs/best_SalamanderID2025.json
+{
+  "dataset": "SalamanderID2025",
+  "score": 0.1523600806097059,
+  "std": 0.025746971464225003,
+  "label": "stage1",
+  "weights": {
+    "miewid": 0.7,
+    "mega": 0.3
+  },
+  "threshold": 0.06,
+  "use_rerank": false,
+  "rr": [
+    20,
+    6,
+    0.3
+  ],
+  "post": {},
+  "consensus": false,
+  "use_orientation_calibration": false,
+  "new_id_frac": 0.4,
+  "seeds": 4,
+  "elapsed_s": 48.66590619087219
+}

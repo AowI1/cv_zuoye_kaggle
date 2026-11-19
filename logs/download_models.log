@@ -1,0 +1,31 @@
+[..] conservationxlabs/miewid-msv3/model.safetensors: 1.0 MB
+[..] conservationxlabs/miewid-msv3/model.safetensors: 99.6 MB
+[probe retry 2] conservationxlabs/miewid-msv3/model.safetensors: <urlopen error [Errno 8] nodename nor servname provided, or not known>
+[OK] conservationxlabs/miewid-msv3/model.safetensors: 205809924 bytes
+[retry 1] conservationxlabs/miewid-msv3/config.json: <urlopen error _ssl.c:1129: The handshake operation timed out>
+[..] conservationxlabs/miewid-msv3/config.json: 0.0 MB
+[OK] conservationxlabs/miewid-msv3/config.json: 528 bytes
+[probe retry 1] conservationxlabs/miewid-msv3/configuration_miewid.py: <urlopen error _ssl.c:1129: The handshake operation timed out>
+[..] conservationxlabs/miewid-msv3/configuration_miewid.py: 0.0 MB
+[OK] conservationxlabs/miewid-msv3/configuration_miewid.py: 777 bytes
+[..] conservationxlabs/miewid-msv3/modeling_miewid.py: 0.0 MB
+[OK] conservationxlabs/miewid-msv3/modeling_miewid.py: 5335 bytes
+[probe retry 1] conservationxlabs/miewid-msv3/heads.py: <urlopen error _ssl.c:1129: The handshake operation timed out>
+[..] conservationxlabs/miewid-msv3/heads.py: 0.0 MB
+[OK] conservationxlabs/miewid-msv3/heads.py: 6658 bytes
+[..] BVRA/MegaDescriptor-L-384/pytorch_model.bin: 1.0 MB
+[..] BVRA/MegaDescriptor-L-384/pytorch_model.bin: 163.6 MB
+[..] BVRA/MegaDescriptor-L-384/pytorch_model.bin: 280.0 MB
+[..] BVRA/MegaDescriptor-L-384/pytorch_model.bin: 434.1 MB
+[..] BVRA/MegaDescriptor-L-384/pytorch_model.bin: 594.5 MB
+[..] BVRA/MegaDescriptor-L-384/pytorch_model.bin: 742.4 MB
+[..] BVRA/MegaDescriptor-L-384/pytorch_model.bin: 866.1 MB
+[..] BVRA/MegaDescriptor-L-384/pytorch_model.bin: 965.7 MB
+[..] BVRA/MegaDescriptor-L-384/pytorch_model.bin: 1067.5 MB
+[..] BVRA/MegaDescriptor-L-384/pytorch_model.bin: 1264.6 MB
+[..] BVRA/MegaDescriptor-L-384/pytorch_model.bin: 1527.8 MB
+[..] BVRA/MegaDescriptor-L-384/pytorch_model.bin: 1782.6 MB
+[OK] BVRA/MegaDescriptor-L-384/pytorch_model.bin: 1935177938 bytes
+[..] BVRA/MegaDescriptor-L-384/config.json: 0.0 MB
+[OK] BVRA/MegaDescriptor-L-384/config.json: 609 bytes
+ALL MODELS DOWNLOADED

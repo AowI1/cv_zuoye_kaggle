@@ -1,0 +1,1 @@
+{"backbone": "mega", "dataset": "SalamanderID2025", "split": "test", "n": 689, "size": 384, "tta": false, "letterbox": false, "preprocess": true}

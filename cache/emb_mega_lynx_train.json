@@ -1,0 +1,1 @@
+{"backbone": "mega", "dataset": "LynxID2025", "split": "train", "n": 2957, "size": 384, "tta": false, "letterbox": false, "preprocess": true}

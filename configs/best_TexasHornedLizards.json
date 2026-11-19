@@ -1,0 +1,30 @@
+{
+  "dataset": "TexasHornedLizards",
+  "zero_shot": true,
+  "weights": {
+    "miewid": 0.5,
+    "mega": 0.5,
+    "local": 2.0
+  },
+  "threshold": 0.4200000000000001,
+  "use_rerank": false,
+  "rr": [
+    20,
+    6,
+    0.3
+  ],
+  "post": {
+    "merge_small": 1,
+    "merge_threshold": 0.4,
+    "split_big": 1000000000,
+    "split_threshold": 0.65,
+    "anchor": false
+  },
+  "consensus": false,
+  "local_method": "root_sift",
+  "local_weight": 2.0,
+  "score_global_only": null,
+  "score_with_local": null,
+  "silhouette": 0.16013219952583313,
+  "n_clusters": 179
+}

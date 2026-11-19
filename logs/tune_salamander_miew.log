@@ -1,0 +1,30 @@
+[SalamanderID2025] 3 splits ready (query sizes [600, 600, 600])
+stage1: ARI=0.1534 ± 0.0210 weights={'miewid': 1.0} t=0.080
+stage2: re-ranking does not help (0.1310 < 0.1534)
+stage3: post={'merge_small': 1, 'merge_threshold': 0.4, 'split_big': 1000000000, 'split_threshold': 0.65, 'anchor': False} ARI=0.1534
+stage4: consensus ARI=0.1151
+stage5: orientation calibration ARI=0.1216
+
+BEST [SalamanderID2025] ARI=0.1534 ± 0.0210 (stage1) -> /Users/fy/Desktop/kaggle/configs/best_SalamanderID2025.json
+{
+  "dataset": "SalamanderID2025",
+  "score": 0.15342395303434844,
+  "std": 0.020998522706846833,
+  "label": "stage1",
+  "weights": {
+    "miewid": 1.0
+  },
+  "threshold": 0.08,
+  "use_rerank": false,
+  "rr": [
+    20,
+    6,
+    0.3
+  ],
+  "post": {},
+  "consensus": false,
+  "use_orientation_calibration": false,
+  "new_id_frac": 0.4,
+  "seeds": 3,
+  "elapsed_s": 48.151078939437866
+}

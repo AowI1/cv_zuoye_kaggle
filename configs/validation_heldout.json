@@ -1,0 +1,35 @@
+{
+  "LynxID2025": {
+    "ari_mean": 0.3128,
+    "ari_std": 0.0258,
+    "clusters": [
+      391,
+      356,
+      376,
+      366
+    ],
+    "n": 4
+  },
+  "SalamanderID2025": {
+    "ari_mean": 0.3252,
+    "ari_std": 0.0326,
+    "clusters": [
+      421,
+      394,
+      419,
+      360
+    ],
+    "n": 4
+  },
+  "SeaTurtleID2022": {
+    "ari_mean": 0.7485,
+    "ari_std": 0.0106,
+    "clusters": [
+      255,
+      271,
+      265,
+      250
+    ],
+    "n": 4
+  }
+}

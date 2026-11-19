@@ -1,0 +1,6 @@
+  [local:root_sift] describing 689 images...
+  [local:root_sift] matching 13337 candidate pairs...
+    matched 5000/13337
+    matched 10000/13337
+[done] local_root_sift_salamander_test.npy (689, 689), nonzero pairs=21194, elapsed=34s
+  score stats: mean=0.0051 p90=0.0066

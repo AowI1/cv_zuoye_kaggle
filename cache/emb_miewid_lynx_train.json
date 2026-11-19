@@ -1,0 +1,1 @@
+{"backbone": "miewid", "dataset": "LynxID2025", "split": "train", "n": 2957, "size": 440, "tta": false, "letterbox": false, "preprocess": true}

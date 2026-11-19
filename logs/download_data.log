@@ -1,0 +1,31 @@
+[retry 1] metadata.csv: HTTP Error 429: Too Many Requests
+[retry 2] metadata.csv: HTTP Error 429: Too Many Requests
+[..] metadata.csv: 1.0/2.1 MB
+[OK] metadata.csv: 2089701 bytes
+[..] sample_submission.csv: 0.1/0.1 MB
+[OK] sample_submission.csv: 75950 bytes
+[..] data/train.zip: 1.0/1348.1 MB
+[..] data/train.zip: 103.8/1348.1 MB
+[..] data/train.zip: 241.2/1348.1 MB
+[..] data/train.zip: 467.7/1348.1 MB
+[..] data/train.zip: 670.0/1348.1 MB
+[..] data/train.zip: 887.1/1348.1 MB
+[..] data/train.zip: 1097.9/1348.1 MB
+[..] data/train.zip: 1335.9/1348.1 MB
+[OK] data/train.zip: 1348110290 bytes
+[retry 1] data/test.zip: <urlopen error [Errno 8] nodename nor servname provided, or not known>
+[retry 2] data/test.zip: HTTP Error 429: Too Many Requests
+[retry 3] data/test.zip: HTTP Error 429: Too Many Requests
+[retry 4] data/test.zip: HTTP Error 429: Too Many Requests
+[retry 5] data/test.zip: The read operation timed out
+[..] data/test.zip: 1.0/819.2 MB
+[..] data/test.zip: 121.6/819.2 MB
+[..] data/test.zip: 170.9/819.2 MB
+[..] data/test.zip: 290.5/819.2 MB
+[..] data/test.zip: 379.6/819.2 MB
+[..] data/test.zip: 453.0/819.2 MB
+[..] data/test.zip: 559.9/819.2 MB
+[..] data/test.zip: 691.0/819.2 MB
+[..] data/test.zip: 774.9/819.2 MB
+[OK] data/test.zip: 819201168 bytes
+ALL DOWNLOADS COMPLETE

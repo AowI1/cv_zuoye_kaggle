@@ -1,0 +1,1 @@
+{"backbone": "mega", "dataset": "SeaTurtleID2022", "split": "test", "n": 500, "size": 384, "tta": false, "letterbox": false, "preprocess": true}

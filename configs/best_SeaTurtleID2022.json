@@ -1,0 +1,37 @@
+{
+  "dataset": "SeaTurtleID2022",
+  "score": 0.743680246486885,
+  "std": 0.011131282631021694,
+  "label": "stage3",
+  "weights": {
+    "miewid": 0.7,
+    "mega": 0.3,
+    "local": 0.0
+  },
+  "threshold": 0.18,
+  "use_rerank": false,
+  "rr": [
+    20,
+    6,
+    0.3
+  ],
+  "post": {
+    "merge_small": 1,
+    "merge_threshold": 0.4,
+    "split_big": 1000000000,
+    "split_threshold": 0.65,
+    "anchor": true
+  },
+  "consensus": false,
+  "use_orientation_calibration": false,
+  "new_id_frac": 0.4,
+  "seeds": 4,
+  "elapsed_s": 26.022685050964355,
+  "local_method": "root_sift",
+  "local_weight": 0.0,
+  "score_global_only": 0.743680246486885,
+  "score_with_local": 0.7413029188352098,
+  "target_mean_cluster_size": 1.921,
+  "heldout_ari": 0.7485,
+  "heldout_ari_std": 0.0106
+}

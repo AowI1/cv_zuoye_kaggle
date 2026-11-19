@@ -1,0 +1,1 @@
+{"backbone": "miewid", "dataset": "SeaTurtleID2022", "split": "train", "n": 8729, "size": 440, "tta": false, "letterbox": false, "preprocess": true}

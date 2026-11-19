@@ -1,0 +1,5 @@
+LynxID2025           held-out ARI=0.2740 ± 0.0079 (clusters [271, 279, 279, 254])
+SalamanderID2025     held-out ARI=0.3252 ± 0.0326 (clusters [421, 394, 419, 360])
+SeaTurtleID2022      held-out ARI=0.7485 ± 0.0106 (clusters [255, 271, 265, 250])
+
+saved /Users/fy/Desktop/kaggle/configs/validation_heldout.json
