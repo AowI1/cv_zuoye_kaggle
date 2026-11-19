@@ -141,6 +141,33 @@ class MiewID(Backbone):
         return model.to(self.device)
 
 
+class MiewIDFT(Backbone):
+    """MiewID fine-tuned with ArcFace on the labelled database identities."""
+    name = "miewid_ft"
+
+    def __init__(self, device: str = "mps", size: int | None = None,
+                 use_tta: bool = False, letterbox: bool = False,
+                 checkpoint: str | None = None):
+        super().__init__(device=device, size=size, use_tta=use_tta,
+                         letterbox=letterbox)
+        self.checkpoint = checkpoint
+
+    def _load(self):
+        import torch
+
+        model = _MiewIDNet()
+        ckpt_path = self.checkpoint
+        if ckpt_path is None:
+            cands = sorted((MODEL_SPECS["miewid_ft"]["dir"]).glob("*/best.pt"))
+            if not cands:
+                raise FileNotFoundError(
+                    "no fine-tuned checkpoint; run scripts/finetune_miewid.py")
+            ckpt_path = cands[0]
+        ckpt = torch.load(ckpt_path, map_location="cpu", weights_only=True)
+        model.load_state_dict(ckpt["backbone"], strict=True)
+        return model.to(self.device)
+
+
 class Mega(Backbone):
     name = "mega"
 
@@ -177,7 +204,7 @@ class Mega(Backbone):
         return model.to(self.device)
 
 
-BACKBONES = {"miewid": MiewID, "mega": Mega}
+BACKBONES = {"miewid": MiewID, "mega": Mega, "miewid_ft": MiewIDFT}
 
 
 def get_backbone(name: str, **kwargs) -> Backbone:

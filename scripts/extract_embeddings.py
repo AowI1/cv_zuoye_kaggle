@@ -24,7 +24,8 @@ from animalclef.embed import get_backbone
 
 def main() -> int:
     ap = argparse.ArgumentParser()
-    ap.add_argument("--backbone", required=True, choices=["miewid", "mega"])
+    ap.add_argument("--backbone", required=True,
+                    choices=["miewid", "mega", "miewid_ft"])
     ap.add_argument("--species", default="all")
     ap.add_argument("--batch-size", type=int, default=8)
     ap.add_argument("--threads", type=int, default=4)
@@ -34,6 +35,7 @@ def main() -> int:
     ap.add_argument("--no-preprocess", action="store_true")
     ap.add_argument("--force", action="store_true")
     ap.add_argument("--suffix", default="", help="cache suffix, e.g. '_tta'")
+    ap.add_argument("--checkpoint", default="", help="fine-tuned weights (miewid_ft)")
     args = ap.parse_args()
 
     device = get_device()
@@ -44,6 +46,7 @@ def main() -> int:
     model = get_backbone(
         args.backbone, device=device,
         size=args.size or None, use_tta=args.tta, letterbox=args.letterbox,
+        **({"checkpoint": args.checkpoint} if args.backbone == "miewid_ft" else {}),
     )
     print(f"[{args.backbone}] loaded on {device} in {time.time()-t0:.1f}s", flush=True)
 

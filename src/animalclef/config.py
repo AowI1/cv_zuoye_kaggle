@@ -36,6 +36,7 @@ IMAGENET_STD = (0.229, 0.224, 0.225)
 MODEL_SPECS = {
     "miewid": {"dir": MODELS / "miewid-msv3", "size": 440},
     "mega": {"dir": MODELS / "MegaDescriptor-L-384", "size": 384},
+    "miewid_ft": {"dir": MODELS / "miewid-ft", "size": 440},
 }
 
 SEED = 42

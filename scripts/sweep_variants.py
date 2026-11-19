@@ -57,6 +57,48 @@ VARIANTS = [
     ("LynxID2025", "lynx_t0.66", {"threshold": 0.66}, None),
     ("LynxID2025", "lynx_t0.78", {"threshold": 0.78}, None),
     ("LynxID2025", "lynx_local0.1", {"local_weight": 0.1}, None),
+
+    # --- round 2: chase the two directions that moved both scores ----------
+    ("SeaTurtleID2022", "turtle_mean2.5", {}, 2.5),
+    ("SeaTurtleID2022", "turtle_mean2.7", {}, 2.7),
+    ("SeaTurtleID2022", "turtle_mean3.0", {}, 3.0),
+    ("LynxID2025", "lynx_t0.62", {"threshold": 0.62}, None),
+    ("LynxID2025", "lynx_t0.58", {"threshold": 0.58}, None),
+    # lizard: merging hurts, so probe the other side of the optimum
+    ("TexasHornedLizards", "lizard_mean1.3", {}, 1.3),
+    ("TexasHornedLizards", "lizard_mean1.2", {}, 1.2),
+    ("TexasHornedLizards", "lizard_local3.0", {"local_weight": 3.0}, 1.5),
+    ("SalamanderID2025", "salam_mean1.4", {}, 1.4),
+
+    # --- round 3: push the three winning directions to their limits ---------
+    ("TexasHornedLizards", "lizard_mean1.1", {}, 1.1),
+    ("TexasHornedLizards", "lizard_local3.0_mean1.3", {"local_weight": 3.0}, 1.3),
+    ("TexasHornedLizards", "lizard_local4.0_mean1.3", {"local_weight": 4.0}, 1.3),
+    ("TexasHornedLizards", "lizard_merge2_mean1.3", {"merge_small": 2}, 1.3),
+    ("LynxID2025", "lynx_t0.54", {"threshold": 0.54}, None),
+    ("LynxID2025", "lynx_t0.50", {"threshold": 0.50}, None),
+    ("LynxID2025", "lynx_t0.58_anchor0.5", {"threshold": 0.58, "anchor_score": 0.5}, None),
+    ("SeaTurtleID2022", "turtle_mean2.5_anchor0.5", {"anchor_score": 0.5}, 2.5),
+    ("SeaTurtleID2022", "turtle_mean2.5_merge2", {"merge_small": 2}, 2.5),
+]
+
+# Combinations of the directions that improved both public and private scores.
+COMBOS = [
+    ("combo_turtle2.3_lynx0.66", {
+        "SeaTurtleID2022": ({}, 2.3),
+        "LynxID2025": ({"threshold": 0.66}, None),
+    }),
+    # best per species from rounds 1-2, recombined
+    ("combo_best1", {
+        "TexasHornedLizards": ({}, 1.3),
+        "LynxID2025": ({"threshold": 0.58}, None),
+        "SeaTurtleID2022": ({}, 2.5),
+    }),
+    ("combo_best2", {
+        "TexasHornedLizards": ({"local_weight": 3.0}, 1.3),
+        "LynxID2025": ({"threshold": 0.58}, None),
+        "SeaTurtleID2022": ({}, 2.5),
+    }),
 ]
 
 _STATE: dict[str, dict] = {}
@@ -119,6 +161,11 @@ def labels_for(ds: str, best: dict, override: dict, target_mean: float | None,
     st = _species_state(ds, backbones)
     merged = {**best, **override}
     cfg = ms.config_from(merged, ds)
+    # extra knobs that are Config fields rather than entries of best_*.json
+    for k in ("anchor_score", "anchor_margin", "merge_small", "merge_threshold",
+              "method", "split_big", "split_threshold"):
+        if k in override:
+            cfg = replace(cfg, **{k: override[k]})
     w_local = float(merged.get("local_weight", 0.0))
     sim = _fuse_sim(st, cfg, w_local)
     w = {k: v for k, v in cfg.weights.items() if k in st["qq"] and v > 0}
@@ -198,6 +245,28 @@ def main() -> int:
             "file": out.name,
         })
         print(f"[{name}] {ds}: {len(set(lab))} clusters -> {out.name}")
+
+    for name, spec in COMBOS:
+        if args.list:
+            print(f"{name:<24} combo {spec}")
+            continue
+        per = dict(base_labels)
+        for ds, (ov, tm) in spec.items():
+            per[ds] = labels_for(ds, ms.load_best(ds), ov, tm, backbones)
+        rows = []
+        for s in SPECIES:
+            for iid, l in zip(_STATE[s]["test"]["image_id"].values, per[s]):
+                rows.append({"image_id": int(iid), "cluster": f"cluster_{s}_{int(l)}"})
+        out = OUT / f"{name}.csv"
+        sample[["image_id"]].merge(pd.DataFrame(rows), on="image_id", how="left") \
+            .to_csv(out, index=False)
+        counts = {s: int(len(set(per[s]))) for s in SPECIES}
+        manifest["variants"].append({
+            "name": name, "species": "combo", "clusters": counts,
+            "override": {k: v[0] for k, v in spec.items()},
+            "target_mean": {k: v[1] for k, v in spec.items()}, "file": out.name,
+        })
+        print(f"[{name}] combo clusters {counts} -> {out.name}")
 
     (OUT / "manifest.json").write_text(json.dumps(manifest, indent=2))
     print(f"\n{len(manifest['variants'])} variants in {OUT}")

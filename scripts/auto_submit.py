@@ -82,6 +82,12 @@ def list_submissions() -> list[dict]:
     return rows
 
 
+def is_done(entry: dict) -> bool:
+    """True when the variant already has a recorded score."""
+    st = str(entry.get("status", "")).lower()
+    return "complete" in st and entry.get("public") is not None
+
+
 def find_row(rows: list[dict], name: str) -> dict | None:
     hits = [r for r in rows if (r.get("description") or "").strip() == name]
     return hits[0] if hits else None
@@ -103,7 +109,8 @@ def wait_scored(name: str, timeout: int, interval: int) -> dict:
             row = find_row(list_submissions(), name)
         except RuntimeError:
             row = None
-        if row and row.get("status", "").lower().startswith(("complete", "error")):
+        status = (row or {}).get("status", "").lower()
+        if row and ("complete" in status or "error" in status):
             return row
         if row and row.get("status") != last:
             last = row.get("status")
@@ -121,16 +128,23 @@ def save_state(state: dict) -> None:
 
 
 def delta_table(state: dict, manifest: dict) -> str:
-    lines = ["| variant | species | public | private | Δ public | Δ ARI (×4) |",
-             "|---|---|---|---|---|---|"]
-    base_pub = state.get(BASE_FILE, {}).get("public") or BASE_PUBLIC
+    lines = ["| variant | species | public | private | Δ public | Δ private "
+             "| Δ ARI (pub) | Δ ARI (priv) |",
+             "|---|---|---|---|---|---|---|---|"]
+    base = state.get(BASE_FILE, {})
+    base_pub = base.get("public") or BASE_PUBLIC
+    base_priv = base.get("private") or BASE_PRIVATE
     for v in manifest["variants"]:
         s = state.get(v["file"], {})
         pub, priv = s.get("public"), s.get("private")
         d_pub = f"{pub - base_pub:+.4f}" if pub is not None else ""
-        d_ari = f"{(pub - base_pub) * 4:+.3f}" if pub is not None else ""
-        lines.append(f"| {v['name']} | {v['species']} | {pub if pub is not None else ''} "
-                     f"| {priv if priv is not None else ''} | {d_pub} | {d_ari} |")
+        d_priv = f"{priv - base_priv:+.4f}" if priv is not None else ""
+        a_pub = f"{(pub - base_pub) * 4:+.3f}" if pub is not None else ""
+        a_priv = f"{(priv - base_priv) * 4:+.3f}" if priv is not None else ""
+        lines.append(f"| {v['name']} | {v['species']} "
+                     f"| {pub if pub is not None else ''} "
+                     f"| {priv if priv is not None else ''} "
+                     f"| {d_pub} | {d_priv} | {a_pub} | {a_priv} |")
     return "\n".join(lines)
 
 
@@ -164,7 +178,7 @@ def main() -> int:
 
     todo = [v for v in manifest["variants"]
             if (args.only is None or v["name"] == args.only)
-            and state.get(v["file"], {}).get("status") != "complete"]
+            and not is_done(state.get(v["file"], {}))]
     if not todo:
         print("nothing to submit; all variants already scored")
     else:
@@ -194,7 +208,8 @@ def main() -> int:
         priv = row.get("privateScore") or None
         state[v["file"]] = {
             "name": v["name"], "species": v["species"], "clusters": v["clusters"],
-            "status": row.get("status"), "public": float(pub) if pub else None,
+            "status": "complete" if "complete" in row.get("status", "").lower() else row.get("status"),
+            "public": float(pub) if pub else None,
             "private": float(priv) if priv else None, "date": row.get("date"),
         }
         save_state(state)
