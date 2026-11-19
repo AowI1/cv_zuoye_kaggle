@@ -473,6 +473,24 @@
     "species": "SalamanderID2025",
     "status": "complete"
   },
+  "salam_2.0_date0.05.csv": {
+    "clusters": 343,
+    "date": "2026-11-19 16:45:53.800000",
+    "name": "salam_2.0_date0.05",
+    "private": 0.38404,
+    "public": 0.3553,
+    "species": "SalamanderID2025",
+    "status": "complete"
+  },
+  "salam_2.0_date0.10.csv": {
+    "clusters": 344,
+    "date": "2026-11-19 16:46:43.847000",
+    "name": "salam_2.0_date0.10",
+    "private": 0.38034,
+    "public": 0.35645,
+    "species": "SalamanderID2025",
+    "status": "complete"
+  },
   "salam_2.0_local2.5.csv": {
     "clusters": 344,
     "date": "2026-11-19 16:15:45.767000",
@@ -525,6 +543,24 @@
     "private": 0.38499,
     "public": 0.35186,
     "species": "SalamanderID2025",
+    "status": "complete"
+  },
+  "turtle_2.3_date0.05.csv": {
+    "clusters": 216,
+    "date": "2026-11-19 16:47:34.063000",
+    "name": "turtle_2.3_date0.05",
+    "private": 0.38137,
+    "public": 0.38223,
+    "species": "SeaTurtleID2022",
+    "status": "complete"
+  },
+  "turtle_2.3_date0.10.csv": {
+    "clusters": 216,
+    "date": "2026-11-19 16:48:24.400000",
+    "name": "turtle_2.3_date0.10",
+    "private": 0.38592,
+    "public": 0.38506,
+    "species": "SeaTurtleID2022",
     "status": "complete"
   },
   "turtle_2.3_noanchor.csv": {
