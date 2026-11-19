@@ -4,7 +4,10 @@
 set -euo pipefail
 cd "$(dirname "$0")/.."
 
-PY=.venv/bin/python
+# Project venv if present, otherwise the active interpreter (override with PY=...).
+if [ -z "${PY:-}" ]; then
+  if [ -x .venv/bin/python ]; then PY=.venv/bin/python; else PY=python3; fi
+fi
 
 echo "== 1/7 data (official competition mirror) =="
 $PY scripts/download_data.py

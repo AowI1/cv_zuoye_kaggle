@@ -7,9 +7,10 @@ import os
 import sys
 import time
 import urllib.request
+from pathlib import Path
 
 BASE = "https://hf-mirror.com/datasets/BVRA/animal-clef-2026/resolve/main"
-DEST = "/Users/fy/Desktop/kaggle/data/animalclef2026"
+DEST = str(Path(__file__).resolve().parents[1] / "data" / "animalclef2026")
 FILES = {
     "metadata.csv": 2089384,
     "sample_submission.csv": 75633,
@@ -52,8 +53,13 @@ def download(rel: str, expected: int) -> None:
 
 
 def main() -> int:
+    # --meta-only fetches just metadata.csv and sample_submission.csv (~2 MB),
+    # which is all the cached embeddings need to regenerate the submission.
+    meta_only = "--meta-only" in sys.argv[1:]
     os.makedirs(DEST, exist_ok=True)
     for rel, expected in FILES.items():
+        if meta_only and rel.endswith(".zip"):
+            continue
         download(rel, expected)
     print("ALL DOWNLOADS COMPLETE", flush=True)
     return 0

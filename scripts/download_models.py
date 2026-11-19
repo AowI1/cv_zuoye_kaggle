@@ -8,10 +8,11 @@ import os
 import sys
 import time
 import urllib.request
+from pathlib import Path
 
 MIRROR = "https://hf-mirror.com"
 UA = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7)"
-DEST = "/Users/fy/Desktop/kaggle/models"
+DEST = str(Path(__file__).resolve().parents[1] / "models")
 
 # repo_type, repo_id, filename, local_subdir
 FILES = [

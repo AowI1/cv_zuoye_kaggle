@@ -1,7 +1,11 @@
 """Global configuration for the AnimalCLEF26 pipeline."""
+import os
 from pathlib import Path
 
-ROOT = Path("/Users/fy/Desktop/kaggle")
+# Repository root, resolved from this file so the code runs wherever it is
+# cloned. Set ANIMALCLEF_ROOT to keep data/ and models/ outside the repo.
+ROOT = Path(os.environ.get("ANIMALCLEF_ROOT",
+                           Path(__file__).resolve().parents[2]))
 DATA = ROOT / "data" / "animalclef2026"
 IMAGES = DATA / "images"
 CACHE = ROOT / "cache"

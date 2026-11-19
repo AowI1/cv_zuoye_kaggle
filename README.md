@@ -100,6 +100,33 @@ cache/                   # cached embeddings / similarity artifacts
 submissions/             # generated submission.csv
 ```
 
+## Environment
+
+```bash
+python -m venv .venv && source .venv/bin/activate
+pip install -r requirements.txt          # tested on Python 3.15.2
+```
+
+Paths are resolved relative to the repository, so it runs from any clone
+location. Set `ANIMALCLEF_ROOT` to keep `data/`, `models/` and `cache/`
+somewhere else.
+
+## Fast path (no GPU, ~2 MB of downloads)
+
+`cache/` already contains every embedding, local-feature similarity matrix
+and tuned configuration, and `submissions/` the generated outputs. To rebuild
+the exact submission from the committed cache:
+
+```bash
+pip install numpy pandas scikit-learn opencv-python-headless pillow
+python scripts/download_data.py --meta-only   # metadata.csv + sample_submission.csv
+python scripts/make_submission.py
+python scripts/make_submission.py --density-match \
+    --out submissions/submission_densitymatched.csv
+```
+
+Nothing else is required: no model weights, no image archive, no GPU.
+
 ## Reproduction
 
 ```bash
