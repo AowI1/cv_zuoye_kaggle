@@ -312,6 +312,15 @@
     "species": "LynxID2025",
     "status": "complete"
   },
+  "lynx_022_orientcal.csv": {
+    "clusters": 129,
+    "date": "2026-11-19 17:11:17.867000",
+    "name": "lynx_022_orientcal",
+    "private": 0.42261,
+    "public": 0.3704,
+    "species": "LynxID2025",
+    "status": "complete"
+  },
   "lynx_022_rerank.csv": {
     "clusters": 159,
     "date": "2026-11-19 16:15:11.620000",
