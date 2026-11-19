@@ -216,6 +216,24 @@
     "species": "TexasHornedLizards",
     "status": "SubmissionStatus.COMPLETE"
   },
+  "lizard_w3070.csv": {
+    "clusters": 227,
+    "date": "2026-11-19 16:19:23.633000",
+    "name": "lizard_w3070",
+    "private": 0.39119,
+    "public": 0.36257,
+    "species": "TexasHornedLizards",
+    "status": "complete"
+  },
+  "lizard_w7030.csv": {
+    "clusters": 228,
+    "date": "2026-11-19 16:19:57.093000",
+    "name": "lizard_w7030",
+    "private": 0.39119,
+    "public": 0.36409,
+    "species": "TexasHornedLizards",
+    "status": "complete"
+  },
   "lynx_022_anchor0.4.csv": {
     "clusters": 123,
     "date": "2026-11-19 16:13:49.590000",
@@ -249,6 +267,24 @@
     "name": "lynx_022_rerank",
     "private": 0.39797,
     "public": 0.36931,
+    "species": "LynxID2025",
+    "status": "complete"
+  },
+  "lynx_022_w5050.csv": {
+    "clusters": 147,
+    "date": "2026-11-19 16:17:41.223000",
+    "name": "lynx_022_w5050",
+    "private": 0.41733,
+    "public": 0.3598,
+    "species": "LynxID2025",
+    "status": "complete"
+  },
+  "lynx_022_w9010.csv": {
+    "clusters": 119,
+    "date": "2026-11-19 16:18:32.783000",
+    "name": "lynx_022_w9010",
+    "private": 0.41879,
+    "public": 0.38837,
     "species": "LynxID2025",
     "status": "complete"
   },
@@ -468,6 +504,15 @@
     "species": "SalamanderID2025",
     "status": "SubmissionStatus.COMPLETE"
   },
+  "salam_w5050.csv": {
+    "clusters": 344,
+    "date": "2026-11-19 16:20:46.117000",
+    "name": "salam_w5050",
+    "private": 0.38499,
+    "public": 0.35186,
+    "species": "SalamanderID2025",
+    "status": "complete"
+  },
   "turtle_2.3_noanchor.csv": {
     "clusters": 216,
     "date": "2026-11-19 16:16:54.613000",
@@ -546,6 +591,15 @@
     "name": "turtle_mean3.0",
     "private": 0.37633,
     "public": 0.37376,
+    "species": "SeaTurtleID2022",
+    "status": "complete"
+  },
+  "turtle_w9010.csv": {
+    "clusters": 271,
+    "date": "2026-11-19 16:21:37.720000",
+    "name": "turtle_w9010",
+    "private": 0.3626,
+    "public": 0.35166,
     "species": "SeaTurtleID2022",
     "status": "complete"
   }
