@@ -29,7 +29,9 @@ All variants are generated from `cache/` — no re-embedding — by
 | 5 | lynx threshold 0.38 | 0.44220 | 0.38161 |
 | 6 | lynx threshold 0.26, turtle 2.3 | 0.45592 | 0.38799 |
 | 7 | lynx threshold 0.22 (optimum) | 0.46328 | 0.37626 |
-| 8 | salamander density 2.0 + equal backbone weights | **0.46554** | 0.37947 |
+| 8 | salamander density 2.0 + equal backbone weights | 0.46554 | 0.37947 |
+| 9 | same-day similarity boost (turtle 0.10) | 0.47292 | 0.39725 |
+| 10 | same-day boost raised to 0.70 | **0.51932** | 0.43339 |
 
 Additivity was verified early: a combination of two single-species variants
 gained exactly the sum of their individual gains.
@@ -42,6 +44,7 @@ gained exactly the sum of their individual gains.
 | Lizard mean cluster size 1.5 → 1.2 | +0.10 ARI |
 | Salamander density 1.5 → 2.0 (+ equal weights) | +0.05 ARI |
 | Turtle density 1.92 → 2.3 | +0.02 ARI |
+| Turtle same-day similarity boost 0.70 | **+0.24 ARI** on turtle |
 
 ## What did nothing (all measured)
 
@@ -53,6 +56,22 @@ gained exactly the sum of their individual gains.
 - Lizard local-feature weight 3.0/4.0: identical partitions to 2.0.
 - Removing lizard local features: −0.38 ARI — local features are essential
   for the zero-shot species.
+
+## The same-day prior
+
+Salamander and turtle rows carry capture dates; lynx and lizard do not.
+On the labelled split, two images taken the same day are 17x (salamander)
+and 23x (turtle) more likely to be the same individual than a random pair:
+3.5% vs 0.2%, and 11.5% vs 0.5%. Adding a constant to the similarity of
+same-day pairs therefore costs nothing when the images are not related and
+lets the clustering merge genuine re-sightings at a lower threshold.
+
+With a boost of 0.70 the turtle partition goes from 217 to 157 clusters and
+the score jumps from 0.37244 to 0.43233 on that species alone. Above 0.75
+the clustering collapses to one cluster per capture day (36 clusters) and
+the score falls to 0.33838, so the optimum sits just below the collapse
+point. Salamander has a much weaker prior (3.5%) and prefers a small boost
+of 0.05.
 
 ## Why the benchmark thresholds were wrong
 
