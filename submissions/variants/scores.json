@@ -604,6 +604,33 @@
     "species": "SeaTurtleID2022",
     "status": "complete"
   },
+  "turtle_2.3_date0.30.csv": {
+    "clusters": 217,
+    "date": "2026-11-19 16:53:58.943000",
+    "name": "turtle_2.3_date0.30",
+    "private": 0.39296,
+    "public": 0.38903,
+    "species": "SeaTurtleID2022",
+    "status": "complete"
+  },
+  "turtle_2.3_date0.45.csv": {
+    "clusters": 217,
+    "date": "2026-11-19 16:54:31.873000",
+    "name": "turtle_2.3_date0.45",
+    "private": 0.39296,
+    "public": 0.38903,
+    "species": "SeaTurtleID2022",
+    "status": "complete"
+  },
+  "turtle_2.3_date0.70.csv": {
+    "clusters": 157,
+    "date": "2026-11-19 16:55:06.053000",
+    "name": "turtle_2.3_date0.70",
+    "private": 0.43233,
+    "public": 0.4212,
+    "species": "SeaTurtleID2022",
+    "status": "complete"
+  },
   "turtle_2.3_noanchor.csv": {
     "clusters": 216,
     "date": "2026-11-19 16:16:54.613000",
