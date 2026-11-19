@@ -159,6 +159,15 @@
     "species": "combo",
     "status": "complete"
   },
+  "lizard_crop085.csv": {
+    "clusters": 227,
+    "date": "2026-11-19 17:25:44.947000",
+    "name": "lizard_crop085",
+    "private": 0.52224,
+    "public": 0.43039,
+    "species": "TexasHornedLizards",
+    "status": "complete"
+  },
   "lizard_local3.0.csv": {
     "clusters": 182,
     "date": "2026-11-19 15:45:46.700000",
@@ -570,6 +579,15 @@
     "name": "salam_2.0_local2.5",
     "private": 0.38148,
     "public": 0.34917,
+    "species": "SalamanderID2025",
+    "status": "complete"
+  },
+  "salam_crop085.csv": {
+    "clusters": 343,
+    "date": "2026-11-19 17:26:34.950000",
+    "name": "salam_crop085",
+    "private": 0.51726,
+    "public": 0.42483,
     "species": "SalamanderID2025",
     "status": "complete"
   },
