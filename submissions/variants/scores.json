@@ -103,6 +103,20 @@
     "species": "combo",
     "status": "complete"
   },
+  "combo_best8.csv": {
+    "clusters": {
+      "LynxID2025": 129,
+      "SalamanderID2025": 344,
+      "SeaTurtleID2022": 216,
+      "TexasHornedLizards": 227
+    },
+    "date": "2026-11-19 16:23:09.010000",
+    "name": "combo_best8",
+    "private": 0.46554,
+    "public": 0.37947,
+    "species": "combo",
+    "status": "complete"
+  },
   "combo_turtle2.3_lynx0.66.csv": {
     "clusters": {
       "LynxID2025": 513,

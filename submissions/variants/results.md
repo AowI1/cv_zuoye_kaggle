@@ -64,5 +64,6 @@
 | combo_best5 | combo | 0.38161 | 0.4422 | +0.0236 | +0.0698 | +0.094 | +0.279 |
 | combo_best6 | combo | 0.38799 | 0.45592 | +0.0299 | +0.0835 | +0.120 | +0.334 |
 | combo_best7 | combo | 0.37626 | 0.46328 | +0.0182 | +0.0908 | +0.073 | +0.363 |
+| combo_best8 | combo | 0.37947 | 0.46554 | +0.0214 | +0.0931 | +0.086 | +0.372 |
 
 Δ public = variant − baseline; Δ ARI = 4 × Δ public (overall is the four-species mean).
