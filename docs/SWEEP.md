@@ -31,7 +31,8 @@ All variants are generated from `cache/` — no re-embedding — by
 | 7 | lynx threshold 0.22 (optimum) | 0.46328 | 0.37626 |
 | 8 | salamander density 2.0 + equal backbone weights | 0.46554 | 0.37947 |
 | 9 | same-day similarity boost (turtle 0.10) | 0.47292 | 0.39725 |
-| 10 | same-day boost raised to 0.70 | **0.51932** | 0.43339 |
+| 10 | same-day boost raised to 0.70 | 0.51932 | 0.43339 |
+| 11 | lizard centre-crop 0.85 before extraction | **0.52224** | 0.43039 |
 
 Additivity was verified early: a combination of two single-species variants
 gained exactly the sum of their individual gains.
@@ -46,6 +47,13 @@ gained exactly the sum of their individual gains.
 | Turtle density 1.92 → 2.3 | +0.02 ARI |
 | Turtle same-day similarity boost 0.70 | **+0.24 ARI** on turtle |
 
+## Embedding-preprocessing probes
+
+Centre-cropping the image before extraction was tested per species. The
+lizard crop (hand and a written label sit at the frame edges) improves lizard
+ARI by about 0.012; 0.85 is the optimum (0.75 and 0.70 regress). Salamander
+prefers the uncropped image (benchmark 0.157 vs 0.165).
+
 ## What did nothing (all measured)
 
 - `anchor_score` / `anchor_margin` changes: identical partitions.
@@ -56,6 +64,11 @@ gained exactly the sum of their individual gains.
 - Lizard local-feature weight 3.0/4.0: identical partitions to 2.0.
 - Removing lizard local features: −0.38 ARI — local features are essential
   for the zero-shot species.
+- Orientation-conditioned calibration on lynx (at the tuned threshold):
+  identical partition and identical score.
+- MiewID fine-tuning (ArcFace and plain softmax, 6 epochs, 288 px): held-out
+  ARI 0.138 / 0.121 vs 0.153 frozen — no gain; the bottleneck is not the
+  backbone's fitting capacity on 77 identities.
 
 ## The same-day prior
 
