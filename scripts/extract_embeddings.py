@@ -36,6 +36,8 @@ def main() -> int:
     ap.add_argument("--force", action="store_true")
     ap.add_argument("--suffix", default="", help="cache suffix, e.g. '_tta'")
     ap.add_argument("--checkpoint", default="", help="fine-tuned weights (miewid_ft)")
+    ap.add_argument("--center-crop", type=float, default=1.0,
+                    help="centre-crop fraction before resizing (e.g. 0.85)")
     args = ap.parse_args()
 
     device = get_device()
@@ -46,6 +48,7 @@ def main() -> int:
     model = get_backbone(
         args.backbone, device=device,
         size=args.size or None, use_tta=args.tta, letterbox=args.letterbox,
+        crop=args.center_crop,
         **({"checkpoint": args.checkpoint} if args.backbone == "miewid_ft" else {}),
     )
     print(f"[{args.backbone}] loaded on {device} in {time.time()-t0:.1f}s", flush=True)

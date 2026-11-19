@@ -25,7 +25,9 @@ class Backbone:
     name = "base"
 
     def __init__(self, device: str = "mps", size: int | None = None,
-                 use_tta: bool = False, letterbox: bool = False):
+                 use_tta: bool = False, letterbox: bool = False,
+                 crop: float = 1.0):
+        self.crop = crop
         self.device = device
         self.size = size or MODEL_SPECS[self.name]["size"]
         self.use_tta = use_tta
@@ -69,7 +71,7 @@ class Backbone:
         done = 0
         for chunk, batch in iter_batches(
             df, indices, batch_size, n_threads, do_preprocess,
-            self.size, self.letterbox,
+            self.size, self.letterbox, self.crop,
         ):
             x = self._to_tensor(batch)
             f = self._forward(x)

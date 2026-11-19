@@ -33,7 +33,8 @@ def load_metadata(root: Path = DATA) -> pd.DataFrame:
 
 def load_image(path: str, dataset: str, do_preprocess: bool = True,
                size: int | None = None, letterbox: bool = False,
-               pre_max_side: int | None = 512) -> np.ndarray:
+               pre_max_side: int | None = 512,
+               crop: float = 1.0) -> np.ndarray:
     """Load one RGB image, downscale, apply species preprocessing, resize.
 
     Images arrive at wildly different resolutions (600-2600 px); downscaling to
@@ -50,6 +51,12 @@ def load_image(path: str, dataset: str, do_preprocess: bool = True,
             img = cv2.resize(img, (int(round(w * scale)), int(round(h * scale))),
                              interpolation=cv2.INTER_AREA)
     img = preprocess(img, dataset, enabled=do_preprocess)
+    if crop < 1.0:
+        # Centre crop: the subject occupies the middle of every provided crop.
+        h, w = img.shape[:2]
+        ch, cw = max(1, int(round(h * crop))), max(1, int(round(w * crop)))
+        y0, x0 = (h - ch) // 2, (w - cw) // 2
+        img = img[y0:y0 + ch, x0:x0 + cw]
     if size is not None:
         img = resize(img, size, letterbox=letterbox)
     return img
@@ -72,7 +79,8 @@ def resize(img: np.ndarray, size: int, letterbox: bool = False) -> np.ndarray:
 
 def iter_batches(df: pd.DataFrame, indices: Sequence[int] | None,
                  batch_size: int, n_threads: int, do_preprocess: bool,
-                 size: int, letterbox: bool = False) -> Iterator[tuple[list[int], np.ndarray]]:
+                 size: int, letterbox: bool = False,
+                 crop: float = 1.0) -> Iterator[tuple[list[int], np.ndarray]]:
     """Yield (indices, uint8 NHWC batch) with threaded image loading.
 
     Loading and species preprocessing are CPU-bound and release the GIL inside
@@ -89,7 +97,7 @@ def iter_batches(df: pd.DataFrame, indices: Sequence[int] | None,
             chunk = indices[start:start + batch_size]
             futs = [
                 pool.submit(load_image, paths[i], datasets[i], do_preprocess,
-                            size, letterbox)
+                            size, letterbox, 512, crop)
                 for i in chunk
             ]
             arrays = [f.result() for f in futs]
