@@ -294,6 +294,15 @@
     "species": "LynxID2025",
     "status": "complete"
   },
+  "lynx_022_local0.05.csv": {
+    "clusters": 143,
+    "date": "2026-11-19 17:08:05.893000",
+    "name": "lynx_022_local0.05",
+    "private": 0.41946,
+    "public": 0.37334,
+    "species": "LynxID2025",
+    "status": "complete"
+  },
   "lynx_022_merge2.csv": {
     "clusters": 129,
     "date": "2026-11-19 16:14:22.673000",
@@ -555,6 +564,24 @@
     "species": "SalamanderID2025",
     "status": "complete"
   },
+  "salam_date005_d1.8.csv": {
+    "clusters": 383,
+    "date": "2026-11-19 17:06:26.133000",
+    "name": "salam_date005_d1.8",
+    "private": 0.37237,
+    "public": 0.35948,
+    "species": "SalamanderID2025",
+    "status": "complete"
+  },
+  "salam_date005_d2.2.csv": {
+    "clusters": 313,
+    "date": "2026-11-19 17:07:16.013000",
+    "name": "salam_date005_d2.2",
+    "private": 0.37962,
+    "public": 0.3505,
+    "species": "SalamanderID2025",
+    "status": "complete"
+  },
   "salam_direct_t0.14.csv": {
     "clusters": 276,
     "date": "2026-11-19 15:33:47.550000",
@@ -732,6 +759,24 @@
     "name": "turtle_2.3_noanchor",
     "private": 0.37854,
     "public": 0.36729,
+    "species": "SeaTurtleID2022",
+    "status": "complete"
+  },
+  "turtle_date070_d2.0.csv": {
+    "clusters": 157,
+    "date": "2026-11-19 17:05:02.907000",
+    "name": "turtle_date070_d2.0",
+    "private": 0.43233,
+    "public": 0.4212,
+    "species": "SeaTurtleID2022",
+    "status": "complete"
+  },
+  "turtle_date070_d2.6.csv": {
+    "clusters": 157,
+    "date": "2026-11-19 17:05:52.537000",
+    "name": "turtle_date070_d2.6",
+    "private": 0.43233,
+    "public": 0.4212,
     "species": "SeaTurtleID2022",
     "status": "complete"
   },
