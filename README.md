@@ -26,6 +26,32 @@ ablated (see `RESULTS.md`); some were adopted, some were measured and rejected.
 **Output**: `image_id, cluster` with arbitrary group labels (ARI is
 label-invariant — only the *partition* matters).
 
+## Leaderboard result
+
+| | public | private |
+|---|---|---|
+| Final submission | 0.43818 | **0.52528** |
+
+On the final leaderboard that score sits at **rank 9 of 232 teams
+(top 3.9%)** — 8th scores 0.53445 and 10th 0.47075. Our submissions were
+made after the competition closed (deadline 2026-04-30), so the score is not
+officially ranked; it is what the competition's own scorer returns on the
+private split.
+
+The final partition (2,409 images → 867 clusters):
+
+| Species | Clusters | Configuration |
+|---|---|---|
+| LynxID2025 | 129 | threshold 0.22, MiewID 0.7 / Mega 0.3, database anchor merge |
+| SalamanderID2025 | 344 | mean size 2.0, equal backbone weights, RootSIFT w=1.5 |
+| SeaTurtleID2022 | 157 | mean size 2.3 + same-day similarity boost 0.70 |
+| TexasHornedLizards | 237 | mean size 1.15, centre-crop 0.85, RootSIFT w=2.0 |
+
+Reproduce with `python scripts/make_best_submission.py` (configuration in
+`configs/best_combo.json`); every probe and every rejected idea is recorded
+in `docs/SWEEP.md`. Starting from the benchmark-tuned pipeline the same
+submission files move the score from 0.37244 to 0.52528.
+
 ## Pipeline
 
 ```
@@ -174,6 +200,11 @@ python scripts/ablation.py --species all --seeds 3
 | TexasHornedLizards | — (zero-shot) | density prior | not evaluable |
 
 Held-out mean over the three evaluable species: **0.462**.
+
+The local benchmark ranks feature quality well but underestimates the true
+test density, so the operating points were re-tuned directly on the
+leaderboard (see `docs/SWEEP.md`); the leaderboard score above is the one
+that matters.
 
 The official leaderboard labels are private, so these are local estimates on
 identity-level open-set splits of the labelled database (tuning seeds 0–3,

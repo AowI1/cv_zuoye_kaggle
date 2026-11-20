@@ -1,5 +1,32 @@
 # AnimalCLEF26 — Results and evidence
 
+## Final leaderboard result
+
+| | public | private |
+|---|---|---|
+| Final submission (`submissions/submission_best.csv`) | 0.43818 | **0.52528** |
+
+The final file was submitted three times (`final_best_v1..v3`) and scored
+identically every time (public 0.43818, private 0.52528), so the pipeline is
+deterministic.
+
+Rank on the final leaderboard: **9 / 232 (top 3.9 %)** by score (the
+submission is late, so it is not officially ranked). Progress through the
+leaderboard-driven tuning: 0.37244 (benchmark-tuned pipeline) → 0.39672
+(lizard density) → 0.44220 → 0.46554 → 0.51932 (same-day prior for turtle)
+→ 0.52224 (lizard centre-crop) → **0.52528** (lizard density 1.15).
+
+| Species | Clusters | Final configuration | Main lever |
+|---|---|---|---|
+| LynxID2025 | 129 | threshold 0.22, 0.7/0.3, anchor | threshold 0.72 → 0.22 (+0.20 ARI) |
+| SalamanderID2025 | 344 | mean 2.0, 0.5/0.5, RootSIFT 1.5 | density + equal weights (+0.05 ARI) |
+| SeaTurtleID2022 | 157 | mean 2.3, same-day boost 0.70 | same-day prior (+0.24 ARI) |
+| TexasHornedLizards | 237 | mean 1.15, crop 0.85, RootSIFT 2.0 | density + crop (+0.11 ARI) |
+
+The sections below describe the local open-set benchmark used during
+development; the leaderboard numbers above supersede its absolute values.
+
+
 All numbers are **ARI** on the local identity-level open-set benchmark
 (mean ± std over independent known/new-identity splits of the labelled
 database). The official test labels are private; this benchmark is our
@@ -32,10 +59,10 @@ Held-out mean over the three evaluable species: **0.462**.
 
 | Species | Backbone weights | Re-rank | Local (RootSIFT) w | Anchor merge | Threshold |
 |---|---|---|---|---|---|
-| Lynx | MiewID 0.7 / Mega 0.3 | no | 0 (did not generalise) | yes | 0.72 |
-| Salamander | MiewID 0.7 / Mega 0.3 | no | 1.5 | no | 0.14 |
-| Turtle | MiewID 0.7 / Mega 0.3 | no | 0 | yes | 0.19 |
-| Lizard | 0.5 / 0.5 (rank-normalised) | no | 2.0 | no | density prior |
+| Lynx | MiewID 0.7 / Mega 0.3 | no | 0 (did not generalise) | yes | 0.22 |
+| Salamander | MiewID 0.5 / Mega 0.5 | no | 1.5 | no | density 2.0 |
+| Turtle | MiewID 0.7 / Mega 0.3 | no | 0 | yes | density 2.3 + same-day 0.70 |
+| Lizard | 0.5 / 0.5 (rank-normalised) | no | 2.0 | no | density 1.15 |
 
 ## Component ablations
 

@@ -1,7 +1,7 @@
 {
   "name": "lizard_f115",
   "kaggle_private": 0.52528,
-  "kaggle_public": 0.43121,
+  "kaggle_public": 0.43818,
   "note": "per-species winners from the leaderboard sweep; see docs/SWEEP.md",
   "backbones": [
     "miewid",
