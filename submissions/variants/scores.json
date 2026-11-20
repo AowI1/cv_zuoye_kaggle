@@ -186,12 +186,39 @@
     "species": "TexasHornedLizards",
     "status": "complete"
   },
+  "lizard_f110.csv": {
+    "clusters": 248,
+    "date": "2026-11-20 16:41:03.550000",
+    "name": "lizard_f110",
+    "private": 0.48796,
+    "public": 0.42926,
+    "species": "TexasHornedLizards",
+    "status": "complete"
+  },
+  "lizard_f113.csv": {
+    "clusters": 242,
+    "date": "2026-11-20 16:41:37.713000",
+    "name": "lizard_f113",
+    "private": 0.51126,
+    "public": 0.433,
+    "species": "TexasHornedLizards",
+    "status": "complete"
+  },
   "lizard_f115.csv": {
     "clusters": 237,
     "date": "2026-11-20 16:34:11.750000",
     "name": "lizard_f115",
     "private": 0.52528,
     "public": 0.43818,
+    "species": "TexasHornedLizards",
+    "status": "complete"
+  },
+  "lizard_f117.csv": {
+    "clusters": 233,
+    "date": "2026-11-20 16:42:28.640000",
+    "name": "lizard_f117",
+    "private": 0.52224,
+    "public": 0.43654,
     "species": "TexasHornedLizards",
     "status": "complete"
   },

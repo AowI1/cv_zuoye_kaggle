@@ -18,5 +18,8 @@
 | turtle_f065 | SeaTurtleID2022 | 0.40503 | 0.48774 | +0.0470 | +0.1153 | +0.188 | +0.461 |
 | turtle_f068 | SeaTurtleID2022 | 0.4137 | 0.50452 | +0.0557 | +0.1321 | +0.223 | +0.528 |
 | turtle_f072 | SeaTurtleID2022 | 0.34833 | 0.42537 | -0.0097 | +0.0529 | -0.039 | +0.212 |
+| lizard_f110 | TexasHornedLizards | 0.42926 | 0.48796 | +0.0712 | +0.1155 | +0.285 | +0.462 |
+| lizard_f113 | TexasHornedLizards | 0.433 | 0.51126 | +0.0750 | +0.1388 | +0.300 | +0.555 |
+| lizard_f117 | TexasHornedLizards | 0.43654 | 0.52224 | +0.0785 | +0.1498 | +0.314 | +0.599 |
 
 Δ public = variant − baseline; Δ ARI = 4 × Δ public (overall is the four-species mean).
