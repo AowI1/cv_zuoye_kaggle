@@ -54,6 +54,24 @@ lizard crop (hand and a written label sit at the frame edges) improves lizard
 ARI by about 0.012; 0.85 is the optimum (0.75 and 0.70 regress). Salamander
 prefers the uncropped image (benchmark 0.157 vs 0.165).
 
+## LightGlue local features (measured, rejected)
+
+The lizard ARI drops by 0.38 when the local channel is removed, so upgrading
+the matcher looked like the highest-leverage change.  SIFT keypoints matched
+with LightGlue (kornia pretrained sift weights) + affine RANSAC verification
+were tested against the existing RootSIFT + homography RANSAC channel:
+
+| Species | RootSIFT (current) | LightGlue | Both fused |
+|---|---|---|---|
+| Lizard (score thr 0.5) | 0.52224 | 0.48893 | — |
+| Lizard (score thr 0.2) | — | 0.50866 | 0.52224 |
+| Salamander | 0.52224 | 0.49099 | 0.51930 |
+
+LightGlue is far sparser (116-968 non-zero pairs vs 3378-21426 for
+RootSIFT) and every variant is equal or worse.  The dense brute-force
+matching, despite its false positives, carries more usable signal for these
+fine-grained pattern species.  Keep RootSIFT.
+
 ## What did nothing (all measured)
 
 - `anchor_score` / `anchor_margin` changes: identical partitions.

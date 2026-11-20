@@ -269,11 +269,16 @@ def _species_state(ds: str, backbones: list[str]) -> dict:
 def _fuse_sim(st: dict, cfg, local_weight: float, cfg_extra=None) -> np.ndarray:
     w = {k: v for k, v in cfg.weights.items() if k in st["qq"] and v > 0}
     sim = fuse(st["qq"], w)
+    from animalclef.localfeat import normalize_local
     _m = (cfg_extra or {}).get("local_method", "root_sift")
-    _lsim = (st.get("local") or {}).get(_m)
-    if local_weight > 0 and _lsim is not None and len(_lsim) == st["n"]:
-        from animalclef.localfeat import normalize_local
-        lsim = normalize_local(_lsim)
+    _mats = []
+    _keys = ["root_sift", "lightglue"] if _m == "both" else [_m]
+    for _k in _keys:
+        _v = (st.get("local") or {}).get(_k)
+        if _v is not None and len(_v) == st["n"]:
+            _mats.append(normalize_local(_v))
+    if local_weight > 0 and _mats:
+        lsim = np.mean(_mats, axis=0)
         sim = (sim + local_weight * lsim) / (1.0 + local_weight)
     if cfg.use_rerank:
         sim = cl.rerank_similarity(sim, cfg.rr_k1, cfg.rr_k2, cfg.rr_lambda)
