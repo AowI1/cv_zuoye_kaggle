@@ -9,3 +9,8 @@ __pycache__/
 .ipynb_checkpoints/
 .DS_Store
 *.egg-info/
+
+# experimental artefacts (not needed to rebuild the best submission)
+cache/emb_miewid_ft_*
+models/
+author-kit-main/

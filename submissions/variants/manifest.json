@@ -5,113 +5,65 @@
       "LynxID2025": 549,
       "SalamanderID2025": 457,
       "SeaTurtleID2022": 240,
-      "TexasHornedLizards": 179
+      "TexasHornedLizards": 185
     }
   },
   "variants": [
     {
-      "name": "salam_direct_t0.14",
-      "species": "SalamanderID2025",
-      "override": {},
-      "target_mean": null,
-      "clusters": 276,
-      "file": "salam_direct_t0.14.csv"
+      "name": "lizard_glue",
+      "species": "TexasHornedLizards",
+      "clusters": 228,
+      "override": {
+        "local_method": "lightglue"
+      },
+      "target_mean": 1.2,
+      "file": "lizard_glue.csv"
     },
     {
-      "name": "salam_mean2.0",
+      "name": "lizard_glue02",
+      "species": "TexasHornedLizards",
+      "clusters": 227,
+      "override": {
+        "local_method": "lightglue"
+      },
+      "target_mean": 1.2,
+      "file": "lizard_glue02.csv"
+    },
+    {
+      "name": "lizard_glueboth",
+      "species": "TexasHornedLizards",
+      "clusters": 227,
+      "override": {
+        "local_method": "both"
+      },
+      "target_mean": 1.2,
+      "file": "lizard_glueboth.csv"
+    },
+    {
+      "name": "salam_glue",
       "species": "SalamanderID2025",
-      "override": {},
+      "clusters": 628,
+      "override": {
+        "miewid": 0.5,
+        "mega": 0.5,
+        "local": 1.5,
+        "local_method": "lightglue"
+      },
       "target_mean": 2.0,
-      "clusters": 343,
-      "file": "salam_mean2.0.csv"
+      "file": "salam_glue.csv"
     },
     {
-      "name": "salam_mean2.2",
+      "name": "salam_glueboth",
       "species": "SalamanderID2025",
-      "override": {},
-      "target_mean": 2.2,
-      "clusters": 312,
-      "file": "salam_mean2.2.csv"
-    },
-    {
-      "name": "lizard_mean2.0",
-      "species": "TexasHornedLizards",
-      "override": {},
+      "clusters": 344,
+      "override": {
+        "miewid": 0.5,
+        "mega": 0.5,
+        "local": 1.5,
+        "local_method": "both"
+      },
       "target_mean": 2.0,
-      "clusters": 137,
-      "file": "lizard_mean2.0.csv"
-    },
-    {
-      "name": "lizard_mean2.5",
-      "species": "TexasHornedLizards",
-      "override": {},
-      "target_mean": 2.5,
-      "clusters": 110,
-      "file": "lizard_mean2.5.csv"
-    },
-    {
-      "name": "lizard_mean3.0",
-      "species": "TexasHornedLizards",
-      "override": {},
-      "target_mean": 3.0,
-      "clusters": 90,
-      "file": "lizard_mean3.0.csv"
-    },
-    {
-      "name": "lizard_nolocal",
-      "species": "TexasHornedLizards",
-      "override": {
-        "local_weight": 0.0
-      },
-      "target_mean": 1.5,
-      "clusters": 183,
-      "file": "lizard_nolocal.csv"
-    },
-    {
-      "name": "turtle_mean1.8",
-      "species": "SeaTurtleID2022",
-      "override": {},
-      "target_mean": 1.8,
-      "clusters": 277,
-      "file": "turtle_mean1.8.csv"
-    },
-    {
-      "name": "turtle_mean2.3",
-      "species": "SeaTurtleID2022",
-      "override": {},
-      "target_mean": 2.3,
-      "clusters": 216,
-      "file": "turtle_mean2.3.csv"
-    },
-    {
-      "name": "lynx_t0.66",
-      "species": "LynxID2025",
-      "override": {
-        "threshold": 0.66
-      },
-      "target_mean": null,
-      "clusters": 513,
-      "file": "lynx_t0.66.csv"
-    },
-    {
-      "name": "lynx_t0.78",
-      "species": "LynxID2025",
-      "override": {
-        "threshold": 0.78
-      },
-      "target_mean": null,
-      "clusters": 588,
-      "file": "lynx_t0.78.csv"
-    },
-    {
-      "name": "lynx_local0.1",
-      "species": "LynxID2025",
-      "override": {
-        "local_weight": 0.1
-      },
-      "target_mean": null,
-      "clusters": 588,
-      "file": "lynx_local0.1.csv"
+      "file": "salam_glueboth.csv"
     }
   ]
 }

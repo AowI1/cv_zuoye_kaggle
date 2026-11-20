@@ -1,0 +1,1 @@
+{"backbone": "mega", "dataset": "TexasHornedLizards", "split": "test", "n": 274, "size": 384, "tta": false, "letterbox": false, "preprocess": true}

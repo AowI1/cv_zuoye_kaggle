@@ -1,0 +1,1 @@
+{"backbone": "miewid", "dataset": "SalamanderID2025", "split": "train", "n": 1388, "size": 440, "tta": false, "letterbox": false, "preprocess": true}

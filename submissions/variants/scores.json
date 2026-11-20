@@ -186,6 +186,33 @@
     "species": "TexasHornedLizards",
     "status": "complete"
   },
+  "lizard_glue.csv": {
+    "clusters": 228,
+    "date": "2026-11-20 15:40:00.820000",
+    "name": "lizard_glue",
+    "private": 0.48893,
+    "public": 0.4253,
+    "species": "TexasHornedLizards",
+    "status": "complete"
+  },
+  "lizard_glue02.csv": {
+    "clusters": 227,
+    "date": "2026-11-20 15:51:38.997000",
+    "name": "lizard_glue02",
+    "private": 0.50866,
+    "public": 0.42767,
+    "species": "TexasHornedLizards",
+    "status": "complete"
+  },
+  "lizard_glueboth.csv": {
+    "clusters": 227,
+    "date": "2026-11-20 15:52:43.027000",
+    "name": "lizard_glueboth",
+    "private": 0.52224,
+    "public": 0.4383,
+    "species": "TexasHornedLizards",
+    "status": "complete"
+  },
   "lizard_local3.0.csv": {
     "clusters": 182,
     "date": "2026-11-19 15:45:46.700000",
@@ -635,6 +662,24 @@
     "public": 0.34241,
     "species": "SalamanderID2025",
     "status": "SubmissionStatus.COMPLETE"
+  },
+  "salam_glue.csv": {
+    "clusters": 628,
+    "date": "2026-11-20 15:54:27.200000",
+    "name": "salam_glue",
+    "private": 0.49099,
+    "public": 0.42442,
+    "species": "SalamanderID2025",
+    "status": "complete"
+  },
+  "salam_glueboth.csv": {
+    "clusters": 344,
+    "date": "2026-11-20 15:55:00.673000",
+    "name": "salam_glueboth",
+    "private": 0.5193,
+    "public": 0.43381,
+    "species": "SalamanderID2025",
+    "status": "complete"
   },
   "salam_mean1.4.csv": {
     "clusters": 491,
