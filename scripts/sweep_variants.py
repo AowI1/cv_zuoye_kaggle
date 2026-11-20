@@ -116,6 +116,38 @@ VARIANTS = [
      {"weights": {"miewid": 0.5, "mega": 0.5, "local": 1.5}}, 2.0),
     ("SeaTurtleID2022", "turtle_w9010",
      {"weights": {"miewid": 0.9, "mega": 0.1, "local": 0.0}}, 2.3),
+
+    # --- round 9: same-day prior (same-date pairs are 17-23x more likely ---
+    # to be the same individual, measured on the labelled split)
+    ("SalamanderID2025", "salam_2.0_date0.05", {"date_boost": 0.05}, 2.0),
+    ("SalamanderID2025", "salam_2.0_date0.10", {"date_boost": 0.10}, 2.0),
+    ("SeaTurtleID2022", "turtle_2.3_date0.05", {"date_boost": 0.05}, 2.3),
+    ("SeaTurtleID2022", "turtle_2.3_date0.10", {"date_boost": 0.10}, 2.3),
+    ("SeaTurtleID2022", "turtle_2.3_date0.15", {"date_boost": 0.15}, 2.3),
+    ("SeaTurtleID2022", "turtle_2.3_date0.20", {"date_boost": 0.20}, 2.3),
+    ("SalamanderID2025", "salam_2.0_date0.03", {"date_boost": 0.03}, 2.0),
+    ("SeaTurtleID2022", "turtle_2.3_date0.30", {"date_boost": 0.30}, 2.3),
+    ("SeaTurtleID2022", "turtle_2.3_date0.45", {"date_boost": 0.45}, 2.3),
+    ("SeaTurtleID2022", "turtle_2.3_date0.70", {"date_boost": 0.70}, 2.3),
+    ("SeaTurtleID2022", "turtle_2.3_date1.0", {"date_boost": 1.0}, 2.3),
+    ("SeaTurtleID2022", "turtle_2.3_date1.5", {"date_boost": 1.5}, 2.3),
+    ("SeaTurtleID2022", "turtle_2.3_date3.0", {"date_boost": 3.0}, 2.3),
+    ("SalamanderID2025", "salam_2.0_date0.20", {"date_boost": 0.20}, 2.0),
+    ("SalamanderID2025", "salam_2.0_date0.40", {"date_boost": 0.40}, 2.0),
+    ("SeaTurtleID2022", "turtle_2.3_date0.75", {"date_boost": 0.75}, 2.3),
+    ("SeaTurtleID2022", "turtle_2.3_date0.80", {"date_boost": 0.80}, 2.3),
+    ("SeaTurtleID2022", "turtle_2.3_date0.85", {"date_boost": 0.85}, 2.3),
+    ("SeaTurtleID2022", "turtle_2.3_date0.90", {"date_boost": 0.90}, 2.3),
+
+    # --- round 11: density around the date-prior optimum -------------------
+    ("SeaTurtleID2022", "turtle_date070_d2.0", {"date_boost": 0.70}, 2.0),
+    ("SeaTurtleID2022", "turtle_date070_d2.6", {"date_boost": 0.70}, 2.6),
+    ("SalamanderID2025", "salam_date005_d1.8", {"date_boost": 0.05}, 1.8),
+    ("SalamanderID2025", "salam_date005_d2.2", {"date_boost": 0.05}, 2.2),
+    ("LynxID2025", "lynx_022_local0.05",
+     {"threshold": 0.22, "local_weight": 0.05}, None),
+    ("LynxID2025", "lynx_022_orientcal",
+     {"threshold": 0.22, "use_orientation_calibration": True}, None),
 ]
 
 # Combinations of the directions that improved both public and private scores.
@@ -166,6 +198,27 @@ COMBOS = [
         "SeaTurtleID2022": ({}, 2.3),
         "SalamanderID2025": ({}, 2.0),
     }),
+    ("combo_best10", {
+        "TexasHornedLizards": ({}, 1.2),
+        "LynxID2025": ({"threshold": 0.22}, None),
+        "SeaTurtleID2022": ({"date_boost": 0.70}, 2.3),
+        "SalamanderID2025": ({"weights": {"miewid": 0.5, "mega": 0.5,
+                                          "local": 1.5}}, 2.0),
+    }),
+    ("combo_best9", {
+        "TexasHornedLizards": ({}, 1.2),
+        "LynxID2025": ({"threshold": 0.22}, None),
+        "SeaTurtleID2022": ({"date_boost": 0.10}, 2.3),
+        "SalamanderID2025": ({"weights": {"miewid": 0.5, "mega": 0.5,
+                                          "local": 1.5}}, 2.0),
+    }),
+    ("combo_best8", {
+        "TexasHornedLizards": ({}, 1.2),
+        "LynxID2025": ({"threshold": 0.22}, None),
+        "SeaTurtleID2022": ({}, 2.3),
+        "SalamanderID2025": ({"weights": {"miewid": 0.5, "mega": 0.5,
+                                          "local": 1.5}}, 2.0),
+    }),
 ]
 
 _STATE: dict[str, dict] = {}
@@ -201,25 +254,38 @@ def _species_state(ds: str, backbones: list[str]) -> dict:
         qq = {b: rank_normalize(cosine(e, e)) for b, e in q_embs.items()}
         qd, db_ids = {}, None
 
-    local = None
-    lp = CACHE / f"local_{best.get('local_method', 'root_sift')}_{SPECIES_KEY[ds]}_test.npy"
-    if lp.exists():
-        local = np.load(lp)
+    local = {}
+    for _m in ("root_sift", "lightglue"):
+        _lp = CACHE / f"local_{_m}_{SPECIES_KEY[ds]}_test.npy"
+        if _lp.exists():
+            local[_m] = np.load(_lp)
 
+    dates = test["date"].values if "date" in test else None
     _STATE[ds] = dict(best=best, cfg=cfg, test=test, qq=qq, qd=qd,
-                      db_ids=db_ids, local=local, n=len(test))
+                      db_ids=db_ids, local=local, n=len(test), dates=dates)
     return _STATE[ds]
 
 
-def _fuse_sim(st: dict, cfg, local_weight: float) -> np.ndarray:
+def _fuse_sim(st: dict, cfg, local_weight: float, cfg_extra=None) -> np.ndarray:
     w = {k: v for k, v in cfg.weights.items() if k in st["qq"] and v > 0}
     sim = fuse(st["qq"], w)
-    if local_weight > 0 and st["local"] is not None and len(st["local"]) == st["n"]:
+    _m = (cfg_extra or {}).get("local_method", "root_sift")
+    _lsim = (st.get("local") or {}).get(_m)
+    if local_weight > 0 and _lsim is not None and len(_lsim) == st["n"]:
         from animalclef.localfeat import normalize_local
-        lsim = normalize_local(st["local"])
+        lsim = normalize_local(_lsim)
         sim = (sim + local_weight * lsim) / (1.0 + local_weight)
     if cfg.use_rerank:
         sim = cl.rerank_similarity(sim, cfg.rr_k1, cfg.rr_k2, cfg.rr_lambda)
+    boost = float(cfg_extra.get("date_boost", 0.0)) if cfg_extra else 0.0
+    if boost and st.get("dates") is not None:
+        vals = np.asarray(st["dates"], dtype=object)
+        ok = np.array([isinstance(v, str) and v != "" for v in vals])
+        same = np.zeros((len(vals), len(vals)), dtype=bool)
+        if ok.sum() > 1:
+            sub = vals[ok]
+            same[np.ix_(ok, ok)] = sub[:, None] == sub[None, :]
+        sim = sim + boost * same.astype(sim.dtype)
     return sim
 
 
@@ -235,7 +301,7 @@ def labels_for(ds: str, best: dict, override: dict, target_mean: float | None,
         if k in override:
             cfg = replace(cfg, **{k: override[k]})
     w_local = float(merged.get("local_weight", 0.0))
-    sim = _fuse_sim(st, cfg, w_local)
+    sim = _fuse_sim(st, cfg, w_local, merged)
     w = {k: v for k, v in cfg.weights.items() if k in st["qq"] and v > 0}
     sim_qdb = fuse(st["qd"], w) if st["qd"] else None
     db_ids = st["db_ids"]
