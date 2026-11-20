@@ -39,6 +39,8 @@ def main() -> int:
     ap.add_argument("--date-boost", type=float, default=None)
     ap.add_argument("--local-method", default=None,
                     help="local-feature matrix to fuse (root_sift | lightglue)")
+    ap.add_argument("--override", default="{}",
+                    help="extra JSON overrides (merge_small, anchor_margin, ...)")
     ap.add_argument("--backbones", default="miewid,mega")
     args = ap.parse_args()
 
@@ -49,6 +51,7 @@ def main() -> int:
         override["date_boost"] = args.date_boost
     if args.local_method is not None:
         override["local_method"] = args.local_method
+    override.update(json.loads(args.override))
 
     ds = args.species
     labels = sv.labels_for(ds, ms.load_best(ds), override, args.target_mean,

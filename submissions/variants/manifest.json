@@ -64,6 +64,196 @@
       },
       "target_mean": 2.0,
       "file": "salam_glueboth.csv"
+    },
+    {
+      "name": "lynx_f020",
+      "species": "LynxID2025",
+      "clusters": 108,
+      "override": {
+        "threshold": 0.2
+      },
+      "target_mean": null,
+      "file": "lynx_f020.csv"
+    },
+    {
+      "name": "lynx_f021",
+      "species": "LynxID2025",
+      "clusters": 120,
+      "override": {
+        "threshold": 0.21
+      },
+      "target_mean": null,
+      "file": "lynx_f021.csv"
+    },
+    {
+      "name": "lynx_f023",
+      "species": "LynxID2025",
+      "clusters": 142,
+      "override": {
+        "threshold": 0.23
+      },
+      "target_mean": null,
+      "file": "lynx_f023.csv"
+    },
+    {
+      "name": "lizard_f115",
+      "species": "TexasHornedLizards",
+      "clusters": 237,
+      "override": {},
+      "target_mean": 1.15,
+      "file": "lizard_f115.csv"
+    },
+    {
+      "name": "lizard_f118",
+      "species": "TexasHornedLizards",
+      "clusters": 231,
+      "override": {},
+      "target_mean": 1.18,
+      "file": "lizard_f118.csv"
+    },
+    {
+      "name": "lizard_f125",
+      "species": "TexasHornedLizards",
+      "clusters": 218,
+      "override": {},
+      "target_mean": 1.25,
+      "file": "lizard_f125.csv"
+    },
+    {
+      "name": "salam_f19",
+      "species": "SalamanderID2025",
+      "clusters": 362,
+      "override": {
+        "miewid": 0.5,
+        "mega": 0.5,
+        "local": 1.5
+      },
+      "target_mean": 1.9,
+      "file": "salam_f19.csv"
+    },
+    {
+      "name": "salam_f205",
+      "species": "SalamanderID2025",
+      "clusters": 335,
+      "override": {
+        "miewid": 0.5,
+        "mega": 0.5,
+        "local": 1.5
+      },
+      "target_mean": 2.05,
+      "file": "salam_f205.csv"
+    },
+    {
+      "name": "turtle_f065",
+      "species": "SeaTurtleID2022",
+      "clusters": 204,
+      "override": {
+        "date_boost": 0.65
+      },
+      "target_mean": 2.3,
+      "file": "turtle_f065.csv"
+    },
+    {
+      "name": "turtle_f068",
+      "species": "SeaTurtleID2022",
+      "clusters": 185,
+      "override": {
+        "date_boost": 0.68
+      },
+      "target_mean": 2.3,
+      "file": "turtle_f068.csv"
+    },
+    {
+      "name": "turtle_f072",
+      "species": "SeaTurtleID2022",
+      "clusters": 36,
+      "override": {
+        "date_boost": 0.72
+      },
+      "target_mean": 2.3,
+      "file": "turtle_f072.csv"
+    },
+    {
+      "name": "lizard_f110",
+      "species": "TexasHornedLizards",
+      "clusters": 248,
+      "override": {},
+      "target_mean": 1.1,
+      "file": "lizard_f110.csv"
+    },
+    {
+      "name": "lizard_f113",
+      "species": "TexasHornedLizards",
+      "clusters": 242,
+      "override": {},
+      "target_mean": 1.13,
+      "file": "lizard_f113.csv"
+    },
+    {
+      "name": "lizard_f117",
+      "species": "TexasHornedLizards",
+      "clusters": 233,
+      "override": {},
+      "target_mean": 1.17,
+      "file": "lizard_f117.csv"
+    },
+    {
+      "name": "salam_lw12",
+      "species": "SalamanderID2025",
+      "clusters": 344,
+      "override": {
+        "miewid": 0.5,
+        "mega": 0.5,
+        "local": 1.5,
+        "local_weight": 1.2
+      },
+      "target_mean": 2.0,
+      "file": "salam_lw12.csv"
+    },
+    {
+      "name": "salam_ms3",
+      "species": "SalamanderID2025",
+      "clusters": 343,
+      "override": {
+        "miewid": 0.5,
+        "mega": 0.5,
+        "local": 1.5,
+        "merge_small": 3
+      },
+      "target_mean": 2.0,
+      "file": "salam_ms3.csv"
+    },
+    {
+      "name": "lynx_am005",
+      "species": "LynxID2025",
+      "clusters": 127,
+      "override": {
+        "threshold": 0.22,
+        "anchor_margin": 0.05
+      },
+      "target_mean": null,
+      "file": "lynx_am005.csv"
+    },
+    {
+      "name": "lynx_am02",
+      "species": "LynxID2025",
+      "clusters": 130,
+      "override": {
+        "threshold": 0.22,
+        "anchor_margin": 0.2
+      },
+      "target_mean": null,
+      "file": "lynx_am02.csv"
+    },
+    {
+      "name": "lizard_mt03",
+      "species": "TexasHornedLizards",
+      "clusters": 237,
+      "override": {
+        "merge_threshold": 0.3
+      },
+      "target_mean": 1.15,
+      "file": "lizard_mt03.csv"
     }
   ]
 }
