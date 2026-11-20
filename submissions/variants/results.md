@@ -21,5 +21,10 @@
 | lizard_f110 | TexasHornedLizards | 0.42926 | 0.48796 | +0.0712 | +0.1155 | +0.285 | +0.462 |
 | lizard_f113 | TexasHornedLizards | 0.433 | 0.51126 | +0.0750 | +0.1388 | +0.300 | +0.555 |
 | lizard_f117 | TexasHornedLizards | 0.43654 | 0.52224 | +0.0785 | +0.1498 | +0.314 | +0.599 |
+| salam_lw12 | SalamanderID2025 | 0.43296 | 0.51781 | +0.0749 | +0.1454 | +0.300 | +0.581 |
+| salam_ms3 | SalamanderID2025 | 0.43017 | 0.51707 | +0.0721 | +0.1446 | +0.288 | +0.579 |
+| lynx_am005 | LynxID2025 | 0.43165 | 0.51804 | +0.0736 | +0.1456 | +0.294 | +0.582 |
+| lynx_am02 | LynxID2025 | 0.43339 | 0.51932 | +0.0753 | +0.1469 | +0.301 | +0.588 |
+| lizard_mt03 | TexasHornedLizards | 0.43818 | 0.52528 | +0.0801 | +0.1528 | +0.321 | +0.611 |
 
 Δ public = variant − baseline; Δ ARI = 4 × Δ public (overall is the four-species mean).

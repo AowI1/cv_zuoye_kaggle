@@ -357,6 +357,15 @@
     "species": "TexasHornedLizards",
     "status": "complete"
   },
+  "lizard_mt03.csv": {
+    "clusters": 237,
+    "date": "2026-11-20 16:46:55.090000",
+    "name": "lizard_mt03",
+    "private": 0.52528,
+    "public": 0.43818,
+    "species": "TexasHornedLizards",
+    "status": "complete"
+  },
   "lizard_nolocal.csv": {
     "clusters": 183,
     "date": "2026-11-19 15:28:12.770000",
@@ -453,6 +462,24 @@
     "name": "lynx_022_w9010",
     "private": 0.41879,
     "public": 0.38837,
+    "species": "LynxID2025",
+    "status": "complete"
+  },
+  "lynx_am005.csv": {
+    "clusters": 127,
+    "date": "2026-11-20 16:45:15.990000",
+    "name": "lynx_am005",
+    "private": 0.51804,
+    "public": 0.43165,
+    "species": "LynxID2025",
+    "status": "complete"
+  },
+  "lynx_am02.csv": {
+    "clusters": 130,
+    "date": "2026-11-20 16:46:05.633000",
+    "name": "lynx_am02",
+    "private": 0.51932,
+    "public": 0.43339,
     "species": "LynxID2025",
     "status": "complete"
   },
@@ -780,6 +807,15 @@
     "species": "SalamanderID2025",
     "status": "complete"
   },
+  "salam_lw12.csv": {
+    "clusters": 344,
+    "date": "2026-11-20 16:43:53.080000",
+    "name": "salam_lw12",
+    "private": 0.51781,
+    "public": 0.43296,
+    "species": "SalamanderID2025",
+    "status": "complete"
+  },
   "salam_mean1.4.csv": {
     "clusters": 491,
     "date": "2026-11-19 15:46:20.337000",
@@ -806,6 +842,15 @@
     "public": 0.34649,
     "species": "SalamanderID2025",
     "status": "SubmissionStatus.COMPLETE"
+  },
+  "salam_ms3.csv": {
+    "clusters": 343,
+    "date": "2026-11-20 16:44:26.110000",
+    "name": "salam_ms3",
+    "private": 0.51707,
+    "public": 0.43017,
+    "species": "SalamanderID2025",
+    "status": "complete"
   },
   "salam_w5050.csv": {
     "clusters": 344,
